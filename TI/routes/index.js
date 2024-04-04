@@ -23,4 +23,16 @@ router.get('/product.ejs', function (req, res, next) {
   res.render('product', { title: 'Products' });
 });
 
+router.get('/login.ejs', function (req, res, next) {
+  res.render('login', { title: 'Ingresar' });
+});
+
+router.get('/register.ejs', function (req, res, next) {
+  res.render('register', { title: 'Registrarse' });
+});
+
+router.get('/profile-edit.ejs', function (req, res, next) {
+  res.render('profile-edit', { title: 'Editar' });
+});
+
 module.exports = router;
