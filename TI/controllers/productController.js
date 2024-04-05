@@ -1,10 +1,10 @@
 /* crear el modulo en si */
 
-const index = {
+const product = {
     index: function (req, res, next) {
-        res.render('index', { title: 'Express' });
+        res.render('product', { title: 'Products' });
       }
 };
 
 /* exportar el modulo */
-module.exports = index;
+module.exports = product;

@@ -1,10 +1,10 @@
 /* crear el modulo en si */
 
-const index = {
+const register = {
     index: function (req, res, next) {
-        res.render('index', { title: 'Express' });
+        res.render('register', { title: 'Registrarse' });
       }
 };
 
 /* exportar el modulo */
-module.exports = index;
+module.exports = register;

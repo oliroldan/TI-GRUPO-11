@@ -1,10 +1,10 @@
 /* crear el modulo en si */
 
-const index = {
+const login = {
     index: function (req, res, next) {
-        res.render('index', { title: 'Express' });
+        res.render('login', { title: 'Ingresar' });
       }
 };
 
 /* exportar el modulo */
-module.exports = index;
+module.exports = login;

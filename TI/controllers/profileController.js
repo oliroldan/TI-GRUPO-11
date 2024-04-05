@@ -1,10 +1,10 @@
 /* crear el modulo en si */
 
-const index = {
+const profile = {
     index: function (req, res, next) {
-        res.render('index', { title: 'Express' });
+        res.render('profile', { title: 'Profile' });
       }
 };
 
 /* exportar el modulo */
-module.exports = index;
+module.exports = profile;
