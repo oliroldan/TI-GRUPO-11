@@ -3,11 +3,11 @@ var router = express.Router();
 const indexController = require('../controllers/indexController');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+//router.get('/', function (req, res, next) {
+//  res.render('index', { title: 'Express' });
+//});
 
 // get todos los productos
-//router.get('/index.ejs', indexController.index);
+router.get('/', indexController.index);
 
 module.exports = router
