@@ -3,6 +3,9 @@
 const product = {
     index: function (req, res, next) {
         res.render('product', { title: 'Products' });
+      },
+    add: function (req, res, next) {
+        res.render('product-add', { title: 'Products-add' });
       }
 };
 
