@@ -8,6 +8,6 @@ router.get('/', function (req, res, next) {
 });
 
 // get todos los productos
-router.get('/index.ejs', indexController.index);
+//router.get('/index.ejs', indexController.index);
 
 module.exports = router

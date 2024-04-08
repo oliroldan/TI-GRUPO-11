@@ -27,8 +27,8 @@ app.use('/users', usersRouter);
 
 // app.use('/profile', usersRouter);
 // app.use('/login', usersRouter);
-app.use('/register', usersRouter);
-app.use('/profile-edit', usersRouter);
+//app.use('/register', usersRouter);
+//app.use('/profile-edit', usersRouter);
 
 app.use('/product', productRouter);
 

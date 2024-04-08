@@ -10,10 +10,10 @@ router.get('/', function (req, res, next) {
 
 router.get('/profile', usersController.index);
 
-router.get('/login.ejs', usersController.login);
+router.get('/login', usersController.login);
 
-router.get('/register.ejs', usersController.register);
+router.get('/register', usersController.register);
 
-router.get('/profile-edit.ejs', usersController.edit);
+router.get('/profile-edit', usersController.edit);
 
 module.exports = router;
