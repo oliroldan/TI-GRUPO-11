@@ -1,7 +1,7 @@
 const datos = {
     usuario: {
         usuario: 'zdbor1234',
-        constrasena: 'Hola1234',
+        constrasena: '****',
         recordarme: 'si',
     },
     
