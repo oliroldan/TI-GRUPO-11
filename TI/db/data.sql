@@ -19,7 +19,7 @@ CREATE TABLE productos (
 	fotoProducto VARCHAR(250),
     nombre VARCHAR(250),
     descripcion VARCHAR(250),
-    idUsuario INT,
+    idUsuario INT UNSIGNED,
     createdAt 			TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP ,
 	updatedAt 			TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deletedAt           TIMESTAMP       DEFAULT CURRENT_TIMESTAMP,
@@ -29,8 +29,8 @@ CREATE TABLE productos (
 CREATE TABLE comentarios (
 	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	comentario VARCHAR(250),
-    idUsuario INT,
-    idProductos INT,
+    idUsuario INT UNSIGNED,
+    idProductos INT UNSIGNED,
     createdAt 			TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP ,
 	updatedAt 			TIMESTAMP 		DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deletedAt           TIMESTAMP       DEFAULT CURRENT_TIMESTAMP,
@@ -55,3 +55,5 @@ INSERT INTO productos VALUES (DEFAULT, './public/productos/base2.jpg', 'Base Ess
 INSERT INTO productos VALUES (DEFAULT, './public/productos/highlighterRare.jpg', 'Highlighter Rare Beauty', 'Un iluminador en polvo innovador que le da a la piel un brillo instantáneo como el del vidrio para un brillo fácil y de apariencia natural que dura', DEFAULT, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO productos VALUES (DEFAULT, './public/productos/eyeshadow.jpg', 'Eyeshadow Charlotte Tilbury', 'Paleta de sombras de ojos con tonos nude rosa, rosa intenso y bronce melocotón para lograr unos ojos Pillow Talk DESLUMBRANTES Y SEDUCTORES.', DEFAULT, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO productos VALUES (DEFAULT, './public/productos/skincare2.jpg', 'Skincare Todomoda', 'Tónico iluminador con ácido hialurónico y extracto de sandía, arándanos, naranja y limón. Reabastece la hidratación para nutrir y suavizar la piel.',DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
+-- hay un error los into de productos
