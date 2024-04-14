@@ -55,5 +55,30 @@ INSERT INTO productos VALUES (DEFAULT, './public/productos/base2.jpg', 'Base Ess
 INSERT INTO productos VALUES (DEFAULT, './public/productos/highlighterRare.jpg', 'Highlighter Rare Beauty', 'Un iluminador en polvo innovador que le da a la piel un brillo instantáneo como el del vidrio para un brillo fácil y de apariencia natural que dura', DEFAULT, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO productos VALUES (DEFAULT, './public/productos/eyeshadow.jpg', 'Eyeshadow Charlotte Tilbury', 'Paleta de sombras de ojos con tonos nude rosa, rosa intenso y bronce melocotón para lograr unos ojos Pillow Talk DESLUMBRANTES Y SEDUCTORES.', DEFAULT, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO productos VALUES (DEFAULT, './public/productos/skincare2.jpg', 'Skincare Todomoda', 'Tónico iluminador con ácido hialurónico y extracto de sandía, arándanos, naranja y limón. Reabastece la hidratación para nutrir y suavizar la piel.',DEFAULT, DEFAULT, DEFAULT, DEFAULT);
-
 -- hay un error los into de productos
+
+-- post 1
+INSERT INTO comentarios VALUES (DEFAULT, "Buen producto! Me encanto.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'No me parece que valga lo que sale, igualmente es un buen producto.', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Impecable producto! Y muy buen envase.', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
+--post 2
+INSERT INTO comentarios VALUES (DEFAULT, 'Tan bueno que se me termino al toque! Por lo que sale me tendria que haber controlado.', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Buenisima calidad! Y el waterproof es real.', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Fanatica del producto! Lo volveria a comprar.', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
+--post 3
+INSERT INTO comentarios VALUES (DEFAULT, "Muy buena base! La mejor de todas las que probe.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Increible producto! Selena no falla.', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'No soy fanatica del prducto.', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
+--post 4
+INSERT INTO comentarios VALUES (DEFAULT, 'Cuestionable calidad, pero funciona y precio accesible.', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'No me gusto, pero buen precio.', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Me encanto!! 10/10.', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
+--post 5
+INSERT INTO comentarios VALUES (DEFAULT, "Lo uso todos los dias, lo recomiendo.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Mi favorito!', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'No me gusta la textura que deja.', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
