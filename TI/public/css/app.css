@@ -1,7 +1,6 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 
-
 /*====== Variables ======*/
 :root {
   --light-pink: #FFC0CB;
@@ -12,7 +11,6 @@
   --green: #ad39b5;
   --base-font-family: 'Cambria'
 }
-
 
 /*====== Basics ======*/
 * {
@@ -29,7 +27,7 @@ body {
 body {
   font-family: 'Times New Roman', Times, serif;
   font-weight: 300;
-  background-color: #FFC0CB;
+  background-color: #ffd8de;
 }
 
 p{
@@ -84,11 +82,10 @@ hr {
   border-bottom: solid 1px var(--light-gray);
 }
 
-
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: #FF69B4;
+  background-color: #ff8bc5;
 }
 
 .main-header_home-link,
@@ -128,7 +125,6 @@ hr {
   color: lightpink;
   cursor: pointer;
 }
-
 
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
@@ -171,8 +167,6 @@ hr {
   border-bottom: solid 1px var(--gray);
 }
 
-
-
 /*====== Banner ======*/
 .banner {
   background-image: url(/images/bannerBeauty.png);
@@ -181,7 +175,6 @@ hr {
   background-position: center center;
   height: 100px;
 }
-
 
 /*====== Products ======*/
 .products-wrapper {
@@ -280,8 +273,10 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
+  display: flex;
+  flex-wrap: wrap;
   background-color: #ffffff;
-  padding: 20px 0;
+  padding: 20px 0px;
   margin-top: 80px;
 }
 
@@ -294,7 +289,8 @@ hr {
   width: 1500px;
   color: black;
   font-weight: 600;
-  background-color: deeppink;
+  background-color: #ff8bc5;
+  font-family: 'Arial', Times, serif;
 }
 
 .footer-data {
@@ -327,8 +323,7 @@ hr {
   margin: 0;
   color: var(--gray);
   padding: 15px 0;
-}
-
+} 
 
 /*====== Product Detail ======*/
 .product-detail {

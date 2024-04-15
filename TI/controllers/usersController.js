@@ -1,5 +1,6 @@
 /* crear el modulo en si */
 const datos = require("../db/datos")
+
 const users = {
     index: function (req, res, next) {
         res.render('profile', { usuario: datos.usuario, productos: datos.productos, title: 'Profile' });
