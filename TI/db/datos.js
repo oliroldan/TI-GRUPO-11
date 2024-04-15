@@ -7,7 +7,7 @@ const datos = {
     
     productos: [
         {
-            imagen: './public/productos/baseFitme.jpg',
+            imagen: 'fotosProductos/baseFitme.jpg',
             nombreProducto: 'Base Fitme',
             descripcion: 'La base Fit Me® Matte + Poreless matifica la piel y refina los poros para un acabado naturalmente hermoso e impecable.',
             comentarios: [
@@ -19,7 +19,7 @@ const datos = {
             ]
         },
         {
-            imagen: './public/productos/blushMac.jpg',
+            imagen: 'fotosProductos/blushMac.jpg',
             nombreProducto: 'Blush Mac',
             descripcion: 'Mac Cosmetics Powder Blush Rubor Polvo Varios Tonos 06g. Se aplica de manera uniforme, se adhiere a la piel para lograr una aplicación de color con aspecto natural que permanece durante todo el día.',
             comentarios: [
@@ -31,7 +31,7 @@ const datos = {
             ]
         },
         {
-            imagen: './public/productos/bronzer.jpg',
+            imagen: 'fotosProductos/bronzer.jpg',
             nombreProducto: 'Bronzer Rare Beauty',
             descripcion: 'Los Bronzer Sticks de Rare Beauty son una adición innovadora y versátil para el contorneado, diseñados para ofrecer una aplicación sencilla y resultados naturales.',
             comentarios: [
@@ -43,7 +43,7 @@ const datos = {
             ]
         },
         {
-            imagen: './public/productos/lipglossDior.jpg',
+            imagen: 'fotosProductos/lipglossDior.jpg',
             nombreProducto: 'Lipgloss Dior',
             descripcion: 'Descubre el brillo y el glamour en cada sonrisa con el lip gloss Dior, una verdadera obra maestra de la belleza que elevará tus labios a un proximo nivel',
             comentarios: [
@@ -55,7 +55,7 @@ const datos = {
             ]
         },
         {
-            imagen: './public/productos/mascara.jpg',
+            imagen: 'fotosProductos/mascara.jpg',
             nombreProducto: 'Mascara Maybelline',
             descripcion: 'Es un cosmético totalmente a prueba de agua, formulado con extracto de bambú y fibras para ayudar a cuidar tus pestañas. Además, no deja grumos, ni manchas.',
             comentarios: [
@@ -67,7 +67,7 @@ const datos = {
             ]
         },
         {
-            imagen: './public/productos/bronzerChanel.jpg',
+            imagen: 'fotosProductos/bronzerChanel.jpg',
             nombreProducto: 'Bronzer Chanel',
             descripcion: 'Esta crema gel bronceadora única, ligera y fácil de difuminar ofrece un acabado delicado y aterciopelado para un resplandor bronceado natural.',
             comentarios: [
@@ -79,7 +79,7 @@ const datos = {
             ]
         },
         {
-            imagen: './public/productos/base2.jpg',
+            imagen: 'fotosProductos/base2.jpg',
             nombreProducto: 'Base Essence',
             descripcion: 'Base de maquillaje en polvo, resistente al agua y matificante, con gran cobertura y 16 horas de duración.',
             comentarios: [
@@ -91,7 +91,7 @@ const datos = {
             ]
         },
         {
-            imagen: './public/productos/highlighterRare.jpg',
+            imagen: 'fotosProductos/highlighterRare.jpg',
             nombreProducto: 'Highlighter Rare Beauty',
             descripcion: 'Un iluminador en polvo innovador que le da a la piel un brillo instantáneo como el del vidrio para un brillo fácil y de apariencia natural que dura.',
             comentarios: [
@@ -103,7 +103,7 @@ const datos = {
             ]
         },
         {
-            imagen: './public/productos/eyeshadow.jpg',
+            imagen: 'fotosProductos/eyeshadow.jpg',
             nombreProducto: 'Eyeshadow Charlotte Tilbury',
             descripcion: 'Paleta de sombras de ojos con tonos nude rosa, rosa intenso y bronce melocotón para lograr unos ojos Pillow Talk DESLUMBRANTES Y SEDUCTORES. ',
             comentarios: [
@@ -115,7 +115,7 @@ const datos = {
             ]
         },
         {
-            imagen: './public/productos/skincare2.jpg',
+            imagen: 'fotosProductos/skincare2.jpg',
             nombreProducto: 'Skincare Todomoda',
             descripcion: 'Tónico iluminador con ácido hialurónico y extracto de sandía, arándanos, naranja y limón. Reabastece la hidratación para nutrir y suavizar la piel.',
             comentarios: [
@@ -129,4 +129,4 @@ const datos = {
     ]
 };
 
-module.exports = datos
+module.exports = datos;

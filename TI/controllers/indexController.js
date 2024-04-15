@@ -1,8 +1,9 @@
 /* crear el modulo en si */
+const datos = require("../db/datos")
 
 const index = {
     index: function (req, res, next) {
-        res.render('index', { title: 'Express' });
+        res.render('index', { productos: datos.productos, title: 'Express' });
       }
 };
 
