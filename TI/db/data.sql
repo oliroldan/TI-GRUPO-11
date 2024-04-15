@@ -82,3 +82,28 @@ INSERT INTO comentarios VALUES (DEFAULT, "Lo uso todos los dias, lo recomiendo."
 INSERT INTO comentarios VALUES (DEFAULT, 'Mi favorito!', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO comentarios VALUES (DEFAULT, 'No me gusta la textura que deja.', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
 
+-- post 6
+INSERT INTO comentarios VALUES (DEFAULT, "¡Este producto es increíble! Realmente mejora mi rutina de maquillaje.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "No estoy muy convencida. No cumple todas mis expectativas.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "El color es hermoso, pero la textura podría ser mejor.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
+--post 7
+INSERT INTO comentarios VALUES (DEFAULT, "Me encanta cómo queda en mi piel, pero desearía que durara un poco más.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "¡Definitivamente vale la pena probarlo!", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "No es mi favorito, pero tiene sus puntos positivos.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
+--post 8
+INSERT INTO comentarios VALUES (DEFAULT, "La aplicación es fácil, pero el resultado final no es exactamente lo que esperaba.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Un básico en mi rutina diaria. No puedo vivir sin él.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "¡Me encanta el empaque! Realmente llama la atención.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
+--post 9
+INSERT INTO comentarios VALUES (DEFAULT, "La fragancia es agradable, pero desearía que durara más tiempo.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "No sé si lo volvería a comprar. Hay otras opciones que prefiero.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Lo uso a diario y siempre recibo cumplidos sobre cómo luce.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
+--post 10
+INSERT INTO comentarios VALUES (DEFAULT, "La calidad es excelente, pero el precio es un poco alto para mi presupuesto.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Es un producto versátil que se adapta a diferentes ocasiones.", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Lo compré por recomendación y no me arrepiento en absoluto. ¡Es genial!", DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
