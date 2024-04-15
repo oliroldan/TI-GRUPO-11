@@ -1,8 +1,9 @@
 const datos = {
     usuario: {
-        usuario: 'zdbor1234',
+        nombre: 'zdbor1234',
         constrasena: '****',
         recordarme: 'si',
+        imgPerfil: '/fotosPerfil/foto1.avif'
     },
     
     productos: [
@@ -14,7 +15,7 @@ const datos = {
                 {
                 nombreUsuario: 'mora001',
                 texto: 'Buen producto! Me encanto',
-                imagenPerfil: './public/fotosPerfil/foto1.aviv'
+                imagenPerfil: './public/fotosPerfil/foto1.avif'
                 }
             ]
         },
@@ -74,7 +75,17 @@ const datos = {
                 {
                 nombreUsuario: 'kari006',
                 texto: 'Fanatica del producto! Lo volveria a comprar.',
-                imagenPerfil: './public/fotosPerfil/foto6.webp'
+                imagenPerfil: '/fotosPerfil/foto6.webp'
+                },
+                {
+                    nombreUsuario: 'luz002',
+                    texto: 'No me parece que valga lo que sale, igualmente es un buen producto.',
+                    imagenPerfil: '/fotosPerfil/foto2.jpeg'
+                },
+                {
+                    nombreUsuario: 'sol003',
+                    texto: 'Impecable producto! Y muy buen envase.',
+                    imagenPerfil: '/fotosPerfil/foto3.avif'
                 }
             ]
         },
