@@ -1,7 +1,7 @@
 const datos = {
     usuario: {
         nombre: 'zdbor1234',
-        imgPerfil: '/fotosPerfil/foto1.avif',
+        imgPerfil: '/fotosPerfil/perfil.png',
         mail: 'zdbor@gmail.com',
         constrasena: '****',
         dni: 46174216,
@@ -110,12 +110,12 @@ const datos = {
                 {
                 nombreUsuario: 'azul005',
                 texto: 'Mi favorito!',
-                imagenPerfil: '/fotosPerfil/foto1.avif'
+                imagenPerfil: '/fotosPerfil/foto6.webp'
                 },
                 {
                 nombreUsuario: 'mari005',
                 texto: 'No me gusta la textura que deja.',
-                imagenPerfil: '/fotosPerfil/foto2.jpeg'
+                imagenPerfil: '/fotosPerfil/foto10.webp'
                 }
             ]
         },
@@ -127,12 +127,12 @@ const datos = {
                 {
                 nombreUsuario: 'kari006',
                 texto: "¡Este producto es increíble! Realmente mejora mi rutina de maquillaje.",
-                imagenPerfil: '/fotosPerfil/foto6.webp'
+                imagenPerfil: '/fotosPerfil/foto4.webp'
                 },
                 {
                 nombreUsuario: 'elena006',
                 texto: "No estoy muy convencida. No cumple todas mis expectativas.",
-                imagenPerfil: '/fotosPerfil/foto2.jpeg'
+                imagenPerfil: '/fotosPerfil/foto7.png'
                 },
                 {
                 nombreUsuario: 'asun006',
@@ -159,7 +159,7 @@ const datos = {
                 {
                 nombreUsuario: 'clara007',
                 texto: "No es mi favorito, pero tiene sus puntos positivos.",
-                imagenPerfil: '/fotosPerfil/foto3.avif'
+                imagenPerfil: '/fotosPerfil/foto10.webp'
                 }
             ]
         },
@@ -171,17 +171,17 @@ const datos = {
                 {
                 nombreUsuario: 'trini008',
                 texto: "La aplicación es fácil, pero el resultado final no es exactamente lo que esperaba.",
-                imagenPerfil: './public/fotosPerfil/foto8.png'
+                imagenPerfil: '/fotosPerfil/foto8.png'
                 },
                 {
                 nombreUsuario: 'ber008',
                 texto: "Un básico en mi rutina diaria. No puedo vivir sin él.",
-                imagenPerfil: '/fotosPerfil/foto2.jpeg'
+                imagenPerfil: '/fotosPerfil/foto9.jpeg'
                 },
                 {
                 nombreUsuario: 'lu008',
                 texto: "¡Me encanta el empaque! Realmente llama la atención.",
-                imagenPerfil: '/fotosPerfil/foto3.avif'
+                imagenPerfil: '/fotosPerfil/foto1.avif'
                 }
             ]
         },
@@ -198,12 +198,12 @@ const datos = {
                 {
                 nombreUsuario: 'lili009',
                 texto: "No sé si lo volvería a comprar. Hay otras opciones que prefiero.",
-                imagenPerfil: '/fotosPerfil/foto2.jpeg'
+                imagenPerfil: '/fotosPerfil/foto4.webp'
                 },
                 {
                 nombreUsuario: 'mer009',
                 texto: "Lo uso a diario y siempre recibo cumplidos sobre cómo luce.",
-                imagenPerfil: '/fotosPerfil/foto3.avif'
+                imagenPerfil: '/fotosPerfil/foto5.png'
                 }
             ]
         },
@@ -225,7 +225,7 @@ const datos = {
                 {
                 nombreUsuario: 'cami010',
                 texto: "Lo uso a diario y siempre recibo cumplidos sobre cómo luce.",
-                imagenPerfil: '/fotosPerfil/foto3.avif'
+                imagenPerfil: '/fotosPerfil/foto9.jpeg'
                 }
             ]
         }

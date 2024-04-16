@@ -12,7 +12,7 @@ const users = {
         res.render('login', { title: 'Ingresar' });
       },
     edit: function (req, res, next) {
-        res.render('profile-edit', { title: 'Editar' });
+        res.render('profile-edit', { usuario: datos.usuario, title: 'Editar' });
       }
 };
 

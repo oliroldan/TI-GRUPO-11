@@ -3,48 +3,47 @@
 <!-- Include Head -->
 <%- include('./partials/head') %>
 
-<body>
-	<!-- Header -->
-	<%- include('./partials/header') %>
-	<!-- /Header -->
+	<body>
+		<!-- Header -->
+		<%- include('./partials/header') %>
+		<!-- /Header -->
 
-		<!-- Novedades -->
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Registrate</h2>
-				</div>
-				<!-- Show the "ultimos" products -->
-				<h2 class="col-12"> 
-					<form action="/" method="GET">
-						<div>
-							<input id="email" type="email" name="email" value="" placeholder="email">
-						</div>
-						<div>
-							<input id="usuario" type="text" name="usuario" value="" placeholder="usuario">
-						</div>
-						<div>
-							<input id="password" type="password" name="password" value="" placeholder="password">
-						</div>
-						<div>
-							<input id="fecha" type="date" name="fecha" value="" placeholder="fecha de nacimiento">
-						</div>
-						<div>
-							<input id="documento" type="number" name="documento" value="" placeholder="DNI">
-						</div>
-						<div>
-							<input id="foto" type="text" name="foto" value="" placeholder="foto de perfil">
-						</div>
-						<div>
-							<button type="submit">Enviar</button> 
-						</div>
-					</form>
-				</h2>
+			<!-- Novedades -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Registrate</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<h2 class="col-12">
+						<form action="/" method="GET">
+							<div>
+								<input id="email" type="email" name="email" value="" placeholder="email">
+							</div>
+							<div>
+								<input id="usuario" type="text" name="usuario" value="" placeholder="usuario">
+							</div>
+							<div>
+								<input id="password" type="password" name="password" value="" placeholder="password">
+							</div>
+							<div>
+								<input id="fecha" type="date" name="fecha" value="" placeholder="fecha de nacimiento">
+							</div>
+							<div>
+								<input id="documento" type="number" name="documento" value="" placeholder="DNI">
+							</div>
+							<div>
+								<input id="foto" type="text" name="foto" value="" placeholder="foto de perfil">
+							</div>
+							<div>
+								<button type="submit">Enviar</button>
+							</div>
+						</form>
+					</h2>
 
-
-				<!-- footer -->
-				<%- include('./partials/footer') %>
-				<!-- /footer -->
-</body>
+					<!-- footer -->
+					<%- include('./partials/footer') %>
+					<!-- /footer -->
+	</body>
 
 </html>

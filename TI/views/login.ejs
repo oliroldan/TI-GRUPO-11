@@ -3,39 +3,39 @@
 <!-- Include Head -->
 <%- include('./partials/head') %>
 
-<body>
-	<!-- Header -->
-	<%- include('./partials/header') %>
-	<!-- /Header -->
+	<body>
+		<!-- Header -->
+		<%- include('./partials/header') %>
+		<!-- /Header -->
 
-		<!-- Novedades -->
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Ingresar</h2>
-				</div>
-				<!-- Show the "ultimos" products -->
-				<h2 class="col-12"> 
-					<form action="/" method="GET">
-						<div>
-							<input id="usuario" type="email" name="usuario" value="" placeholder="usuario o mail">
-						</div>
-						<div>
-							<input id="password" type="password" name="password" value="" placeholder="password">
-						</div>
-						<div>
-							<label for="recordarme">Recordarme</label>
-							<input id="recordarme" type="checkbox" name="recordarme" value="recordarme">
-						</div>
-						<div>
-							<button type="submit">Enviar</button> 
-						</div>
-					</form>
-				</h2>
+			<!-- Novedades -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Ingresar</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<h2 class="col-12">
+						<form action="/" method="GET">
+							<div>
+								<input id="usuario" type="email" name="usuario" value="" placeholder="usuario o mail">
+							</div>
+							<div>
+								<input id="password" type="password" name="password" value="" placeholder="password">
+							</div>
+							<div>
+								<label for="recordarme">Recordarme</label>
+								<input id="recordarme" type="checkbox" name="recordarme" value="recordarme">
+							</div>
+							<div>
+								<button type="submit">Enviar</button>
+							</div>
+						</form>
+					</h2>
 
-				<!-- footer -->
-				<%- include('./partials/footer') %>
-				<!-- /footer -->
-</body>
+					<!-- footer -->
+					<%- include('./partials/footer') %>
+					<!-- /footer -->
+	</body>
 
 </html>
