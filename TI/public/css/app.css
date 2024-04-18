@@ -406,6 +406,11 @@ hr {
   margin-bottom: 15px;
 }
 
+.agregar{
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
 .action-button {
   border: none;
   border-radius: 8px;
