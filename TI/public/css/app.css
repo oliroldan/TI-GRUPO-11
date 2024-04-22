@@ -31,7 +31,7 @@ body {
 }
 
 p{
-  font-family: 'Arial', Times, serif;
+  font-family: 'Cambria', Times, serif;
   font-weight:lighter;
 }
 
@@ -44,7 +44,7 @@ h1{
 }
 
 h2{
-  font-family: 'Arial', Times, serif;
+  font-family: 'Cambria', Times, serif;
   font-weight: lighter;
 }
 
@@ -141,6 +141,7 @@ hr {
 .main-navbar {
   margin-top: 20px;
   display: none;
+  font-weight: bold;
 }
 
 .left-navbar,
@@ -290,7 +291,7 @@ hr {
   color: black;
   font-weight: 600;
   background-color: #ff8bc5;
-  font-family: 'Arial', Times, serif;
+  font-family: 'Cambria', Times, serif;
 }
 
 .footer-data {
