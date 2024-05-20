@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -46,5 +47,20 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+//configuracion de session//
+app.use(session({
+  secret: "MyApp",
+  resave: false,
+  saveUninitialized: true
+}))
+
+app.use(function(req, res, next){
+  if( req.session.user != undefined ){
+    res.locals.user = req.session.user
+  }
+
+  return next()
+})
 
 module.exports = app;
