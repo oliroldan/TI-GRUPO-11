@@ -1,5 +1,5 @@
 /* crear el modulo en si */
-const datos = require("../db/datos")
+const db = require("../database/models")
 
 const product = {
     index: function (req, res, next) {

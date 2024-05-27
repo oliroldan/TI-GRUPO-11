@@ -1,9 +1,11 @@
 /* crear el modulo en si */
-const datos = require("../db/datos")
+const db = require("../database/models")
 
 const index = {
     index: function (req, res, next) {
-        res.render('index', { productos: datos.productos, title: 'Express' });
+      db.Producto.findAll()
+        .then(function(productos){
+          res.render('index', { productos: datos.productos, title: 'Express' })});
       }
 };
 
