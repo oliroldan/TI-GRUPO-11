@@ -51,11 +51,11 @@ INSERT INTO productos VALUES (DEFAULT, './public/productos/blushMac.jpg', 'Blush
 INSERT INTO productos VALUES (DEFAULT, './public/productos/bronzer.jpg', 'Bronzer Rare Beauty', 'Los Bronzer Sticks de Rare Beauty son una adición innovadora y versátil para el contorneado, diseñados para ofrecer una aplicación sencilla y resultados naturales.', 3, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO productos VALUES (DEFAULT, './public/productos/lipglossDior.jpg', 'Lip Gloss Dior', 'Descubre el brillo y el glamour en cada sonrisa con el lip gloss Dior, una verdadera obra maestra de la belleza que elevará tus labios a un proximo nivel', 4, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO productos VALUES (DEFAULT, './public/productos/mascara.jpg', 'Mascara Maybelline','Es un cosmético totalmente a prueba de agua, formulado con extracto de bambú y fibras para ayudar a cuidar tus pestañas. Además, no deja grumos, ni manchas.', 5, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/bronzerChanel.jpg', 'Bronzer Chanel', 'Esta crema gel bronceadora única, ligera y fácil de difuminar ofrece un acabado delicado y aterciopelado para un resplandor bronceado natural.', 6, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/base2.jpg', 'Base Essence', 'Base de maquillaje en polvo, resistente al agua y matificante, con gran cobertura y 16 horas de duración.', 7, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/highlighterRare.jpg', 'Highlighter Rare Beauty', 'Un iluminador en polvo innovador que le da a la piel un brillo instantáneo como el del vidrio para un brillo fácil y de apariencia natural que dura', 8, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/eyeshadow.jpg', 'Eyeshadow Charlotte Tilbury', 'Paleta de sombras de ojos con tonos nude rosa, rosa intenso y bronce melocotón para lograr unos ojos Pillow Talk DESLUMBRANTES Y SEDUCTORES.', 9, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/skincare2.jpg', 'Skincare Todomoda', 'Tónico iluminador con ácido hialurónico y extracto de sandía, arándanos, naranja y limón. Reabastece la hidratación para nutrir y suavizar la piel.',10, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, './public/productos/bronzerChanel.jpg', 'Bronzer Chanel', 'Esta crema gel bronceadora única, ligera y fácil de difuminar ofrece un acabado delicado y aterciopelado para un resplandor bronceado natural.', 1, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, './public/productos/base2.jpg', 'Base Essence', 'Base de maquillaje en polvo, resistente al agua y matificante, con gran cobertura y 16 horas de duración.', 2, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, './public/productos/highlighterRare.jpg', 'Highlighter Rare Beauty', 'Un iluminador en polvo innovador que le da a la piel un brillo instantáneo como el del vidrio para un brillo fácil y de apariencia natural que dura', 3, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, './public/productos/eyeshadow.jpg', 'Eyeshadow Charlotte Tilbury', 'Paleta de sombras de ojos con tonos nude rosa, rosa intenso y bronce melocotón para lograr unos ojos Pillow Talk DESLUMBRANTES Y SEDUCTORES.', 4, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, './public/productos/skincare2.jpg', 'Skincare Todomoda', 'Tónico iluminador con ácido hialurónico y extracto de sandía, arándanos, naranja y limón. Reabastece la hidratación para nutrir y suavizar la piel.',5, DEFAULT, DEFAULT, DEFAULT);
 
 -- 3 comentarios por cada producto
 
@@ -79,22 +79,22 @@ INSERT INTO comentarios VALUES (DEFAULT, "Lo uso todos los dias, lo recomiendo."
 INSERT INTO comentarios VALUES (DEFAULT, 'Mi favorito!', 5, 5, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO comentarios VALUES (DEFAULT, 'No me gusta la textura que deja.', 5, 5, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, "¡Este producto es increíble! Realmente mejora mi rutina de maquillaje.", 6, 6, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "No estoy muy convencida. No cumple todas mis expectativas.", 6, 6, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "El color es hermoso, pero la textura podría ser mejor.", 6, 6, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "¡Este producto es increíble! Realmente mejora mi rutina de maquillaje.", 1, 1, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "No estoy muy convencida. No cumple todas mis expectativas.", 1, 1, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "El color es hermoso, pero la textura podría ser mejor.", 1, 1, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, "Me encanta cómo queda en mi piel, pero desearía que durara un poco más.", 7, 7, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "¡Definitivamente vale la pena probarlo!", 7, 7, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "No es mi favorito, pero tiene sus puntos positivos.", 7, 7, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Me encanta cómo queda en mi piel, pero desearía que durara un poco más.", 2, 2, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "¡Definitivamente vale la pena probarlo!", 2, 2, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "No es mi favorito, pero tiene sus puntos positivos.", 2, 2, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, "La aplicación es fácil, pero el resultado final no es exactamente lo que esperaba.", 8, 8, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "Un básico en mi rutina diaria. No puedo vivir sin él.", 8, 8, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "¡Me encanta el empaque! Realmente llama la atención.", 8, 8, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "La aplicación es fácil, pero el resultado final no es exactamente lo que esperaba.", 3, 3, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Un básico en mi rutina diaria. No puedo vivir sin él.", 3, 3, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "¡Me encanta el empaque! Realmente llama la atención.", 3, 3, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, "La fragancia es agradable, pero desearía que durara más tiempo.", 9, 9, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "No sé si lo volvería a comprar. Hay otras opciones que prefiero.", 9, 9, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "Lo uso a diario y siempre recibo cumplidos sobre cómo luce.", 9, 9, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "La fragancia es agradable, pero desearía que durara más tiempo.", 4, 4, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "No sé si lo volvería a comprar. Hay otras opciones que prefiero.", 4, 4, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Lo uso a diario y siempre recibo cumplidos sobre cómo luce.", 4, 4, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, "La calidad es excelente, pero el precio es un poco alto para mi presupuesto.", 10, 10, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "Es un producto versátil que se adapta a diferentes ocasiones.", 10, 10, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "Lo compré por recomendación y no me arrepiento en absoluto. ¡Es genial!", 10, 10, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "La calidad es excelente, pero el precio es un poco alto para mi presupuesto.", 5, 5, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Es un producto versátil que se adapta a diferentes ocasiones.", 5, 5, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Lo compré por recomendación y no me arrepiento en absoluto. ¡Es genial!", 5, 5, DEFAULT, DEFAULT, DEFAULT);
