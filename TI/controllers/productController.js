@@ -1,4 +1,4 @@
-/* crear el modulo en si */
+/* crear el modulo en si ....*/
 const db = require("../database/models")
 
 const product = {
