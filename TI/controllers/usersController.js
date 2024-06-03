@@ -13,6 +13,16 @@ const users = {
       },
     edit: function (req, res, next) {
         res.render('profile-edit', { usuario: datos.usuario, title: 'Editar' });
+      },
+    store: function(req, res) {
+        let form = req.body;
+
+        db.Movie.create(form)
+        .then((result) => {
+            return res.redirect("/movies")
+        }).catch((err) => {
+          return console.log(err);
+        })
       }
 };
 
