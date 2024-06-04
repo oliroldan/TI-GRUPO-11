@@ -4,9 +4,10 @@ const db = require("../database/models")
 const product = {
     index: function (req, res, next) {
       db.Producto.findAll()
-      .then(function (productos) {
-        res.render('product', {producto: datos.productos[4], title: 'Products' });
+      .then(function (respuesta) {
+        return res.render('product', {producto: respuesta , title: 'Products' });
       })
+      //datos.productos[4]
       .catch(function (error) {
         return console.log(error)
       });  
