@@ -3,8 +3,18 @@ const db = require("../database/models")
 
 const users = {
     index: function (req, res, next) {
-        res.render('profile', { usuario: datos.usuario, productos: datos.productos, title: 'Profile' });
+      db.Usuario.findAll()
+      .then(function (respuesta) {
+        return res.send(respuesta)
+      })
+      .catch(function (error) {
+        return console.log(error)
+      });  
       },
+   // index: function (result) {
+   //     return res.send(result)
+   //     res.render('profile', { usuario: datos.usuario, productos: datos.productos, title: 'Profile' });
+   //   },
     register: function (req, res, next) {
         res.render('register', { title: 'Registrarse' });
       },

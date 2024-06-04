@@ -5,6 +5,7 @@ const product = {
     index: function (req, res, next) {
       db.Producto.findAll()
       .then(function (respuesta) {
+        return res.send(respuesta)
         return res.render('product', {producto: respuesta , title: 'Products' });
       })
       //datos.productos[4]
