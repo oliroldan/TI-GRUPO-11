@@ -10,4 +10,6 @@ router.get('/product-add', productController.add);
 
 router.get('/search-results', productController.search)
 
+router.post("/product-add", productController.store);
+
 module.exports = router;

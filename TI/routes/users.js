@@ -15,6 +15,8 @@ router.get('/profile', usersController.index);
 /* mostrar formulario LOGIN */
 router.get('/login', usersController.login);
 
+//router.post("/login", usersController.store)
+
 /* mostrar formulario REGISTER */
 router.get('/register', usersController.register);
 

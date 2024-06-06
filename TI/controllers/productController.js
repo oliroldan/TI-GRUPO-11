@@ -60,6 +60,10 @@ const product = {
         return res.send(productoBuscado)
         
       },
+      store: function(req, res) {
+        let form = req.body;
+        return res.send(form)
+      }
 };
 
 /* exportar el modulo */

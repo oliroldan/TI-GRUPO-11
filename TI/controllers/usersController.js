@@ -26,10 +26,10 @@ const users = {
       },
     store: function(req, res) {
         let form = req.body;
-
-        db.Movie.create(form)
+        return res.send(form)
+        db.Usuario.create(form)
         .then((result) => {
-            return res.redirect("/movies")
+            return res.redirect("/product")
         }).catch((err) => {
           return console.log(err);
         })
