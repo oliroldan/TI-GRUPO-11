@@ -5,8 +5,8 @@ const product = {
     index: function (req, res, next) {
       db.Producto.findAll()
       .then(function (respuesta) {
-        return res.send(respuesta)
-        return res.render('product', {producto: respuesta , title: 'Products' });
+        //return res.send(respuesta)
+        return res.render('product', {producto: respuesta , title: 'Products' })
       })
       //datos.productos[4]
       .catch(function (error) {
@@ -14,9 +14,10 @@ const product = {
       });  
       },
     add: function (req, res, next) {
-      db.Producto.findAll()
-      .then(function (productos) {
-        res.render('product-add', { usuario: datos.usuario, title: 'Products-add' });
+      db.Usuario.findAll()
+      .then(function (result) {
+        //return res.send(result)
+        res.render('product-add', { usuario: result, title: 'Products-add' });
       })
       .catch(function (error) {
         return console.log(error)
@@ -33,10 +34,11 @@ const product = {
          return console.log(error)
        })   
       },
+
     filtrarProductos: function(req, res) {
         let productoBuscado = req.params.productoBuscado; 
         return res.render("Productos", {listado : datos.filtrarProductos(productoBuscado)})
-      }
+      },
 };
 
 /* exportar el modulo */
