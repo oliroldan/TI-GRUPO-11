@@ -1,5 +1,6 @@
 /* crear el modulo en si */
 const db = require("../database/models")
+const op = db.Sequelize.Op
 
 const product = {
     index: function (req, res, next) {
@@ -24,11 +25,19 @@ const product = {
       });    
       },
     search: function (req, res, next) {
-        let productoBuscado = req.query.search; 
+        let productoBuscado = req.query.search;
+        let filtrado = {
+          where: {
+            nombre: {[op.like]: "%" + productoBuscado + "%"}
+          }
+        }
 
-        db.Producto.findAll()
+        //return res.send(productoBuscado)
+        db.Producto.findOne(filtrado)
         .then(function (productos) {
-          res.render('search-results', { listado: datos.filtrarProductos(productoBuscado), title: 'Search results' });
+          res.send(productos)
+          res.render('search-results', { listado: productos, title: 'Search results' });
+          //datos.filtrarProductos(productoBuscado)
         }) 
         .catch(function (error) {
          return console.log(error)
@@ -37,7 +46,19 @@ const product = {
 
     filtrarProductos: function(req, res) {
         let productoBuscado = req.params.productoBuscado; 
-        return res.render("Productos", {listado : datos.filtrarProductos(productoBuscado)})
+        
+        db.Producto.findByPk(productoBuscado)
+        .then(function(resultado) {
+          return res.render("Productos", {listado : resultado});
+          //return res.render("Productos", {listado : datos.filtrarProductos(productoBuscado)})
+          //return res.send(resultado)
+        })
+        .catch(function(err){
+          return console.log(err);
+        })
+
+        return res.send(productoBuscado)
+        
       },
 };
 
