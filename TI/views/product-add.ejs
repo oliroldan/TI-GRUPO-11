@@ -18,7 +18,7 @@
 					<h2 class="col-12">
 						<form method="post">
 							<div>
-								<input id="imagen" type="file" name="imagen" value="" placeholder="Imagen">
+								<input id="imagen" type="file" name="fotoProducto" value="" placeholder="Imagen">
 							</div>
 							<br>
 							<div>
@@ -26,10 +26,12 @@
 							</div>
 							<br>
 							<div>
-								<input id="Descripción" type="text" name="Descripción" value=""
-									placeholder="Descripción del producto">
+								<input id="descripción" type="text" name="descripción" value="" placeholder="Descripción del producto">
 							</div>
 							<br>
+							<div>
+								<input type="hidden" name="id" value="<%= producto.id %>">
+							</div>
 							<div>
 								<button type="submit">Enviar</button>
 							</div>

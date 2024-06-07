@@ -62,7 +62,41 @@ const product = {
       },
       store: function(req, res) {
         let form = req.body;
-        return res.send(form)
+        //return res.send(form)
+        db.Producto.create(form)
+        .then((result) => {
+            return res.redirect("/product")
+        }).catch((err) => {
+          return console.log(err);
+        })
+      },
+      edit: function (req, res, next) {
+        let idProducto = req.params.idProducto;
+  
+        db.Usuario.findByPk(idProducto)
+        .then(function (resultId) {
+          res.render('product', {producto: resultId})
+        })
+        .catch(function (err) {
+          return console.log(err);
+        })
+      },
+      update: function(req, res) {
+        let form = req.body
+        let filtrado = {
+          where: {
+            id: form.id
+          }
+        }
+        //return res.send(form)
+
+        db.Producto.update(form, filtrado)
+        .then(function(params) {
+          return res.redirect("/product/id/" + form.id)
+        })
+        .catch(function(err) {
+          return console.log(err);
+        })
       }
 };
 

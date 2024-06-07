@@ -24,7 +24,11 @@ router.get('/register', usersController.register);
 router.post("/register", usersController.store)
 
 // ruta por GET de editar perfil
-router.get('/profile-edit', usersController.edit);
+router.get('/profile-edit/:idPerfil', usersController.edit);
+
+//router.post("/profile-edit", usersController.edit)
+
+router.post("/update", usersController.update);
 
 module.exports = router;
 
