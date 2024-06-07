@@ -26,17 +26,17 @@
 							<section class="product-box">
 								<a href="/product">
 									<figure class="product-box_image">
-										<img src="<%= productos[i].imagen %>">
+										<img src="<%= productos[i].fotoProducto %>">
 									</figure>
 									<article class="product-box_data">
 										<h2>
-											<%=productos[i].nombreProducto %>
+											<%=productos[i].nombre %>
 										</h2>
 										<p>
 											<%= productos[i].descripcion %>
-										</p>
+										</p> 
 										<p>
-											<%= productos.comentarios%>
+											<!-- <%= comentario.comentario %> //PORQUE ESTO NO FUNCIONA? EN EL CONTROLLER, LLAMAMOS AL MODELO DE COMENTARIO. DEBERIA FUNCIONAR COMO CON PRODUCT -->
 										</p>
 									</article>
 								</a>
@@ -60,11 +60,11 @@
 							<section class="product-box">
 								<a href="/product">
 									<figure class="product-box_image">
-										<img src="<%= productos[i].imagen %>">
+										<img src="<%= productos[i].fotoProducto %>">
 									</figure>
 									<article class="product-box_data">
 										<h2>
-											<%=productos[i].nombreProducto %>
+											<%=productos[i].nombre %>
 										</h2>
 										<p>
 											<%= productos[i].descripcion %>

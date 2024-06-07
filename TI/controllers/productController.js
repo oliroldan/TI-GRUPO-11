@@ -7,7 +7,7 @@ const product = {
       db.Producto.findAll()
       .then(function (respuesta) {
         //return res.send(respuesta)
-        return res.render('product', {producto: respuesta , title: 'Products' })
+        return res.render('product', {productos: respuesta , title: 'Products' })
       })
       //datos.productos[4]
       .catch(function (error) {
@@ -35,7 +35,7 @@ const product = {
         //return res.send(productoBuscado)
         db.Producto.findOne(filtrado)
         .then(function (productos) {
-          res.send(productos)
+          //res.send(productos)
           res.render('search-results', { listado: productos, title: 'Search results' });
           //datos.filtrarProductos(productoBuscado)
         }) 
@@ -75,7 +75,7 @@ const product = {
   
         db.Usuario.findByPk(idProducto)
         .then(function (resultId) {
-          res.render('product', {producto: resultId})
+          res.render('product', {productos: resultId})
         })
         .catch(function (err) {
           return console.log(err);
@@ -97,7 +97,18 @@ const product = {
         .catch(function(err) {
           return console.log(err);
         })
-      }
+      },
+      comentario: function (req, res, next) {
+        db.Comentario.findAll()
+        .then(function (respuesta) {
+          return res.send(respuesta)
+          return res.render('comentario', {comentario: respuesta , title: 'Comentario' })
+        })
+        //datos.productos[4]
+        .catch(function (error) {
+          return console.log(error)
+        });  
+        },
 };
 
 /* exportar el modulo */

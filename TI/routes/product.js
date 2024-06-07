@@ -16,4 +16,6 @@ router.get('/:idProducto', productController.edit);
 
 router.post("/update", productController.update);
 
+router.get("/comentario", productController.comentario);
+
 module.exports = router;

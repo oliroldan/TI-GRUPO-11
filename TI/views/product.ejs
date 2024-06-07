@@ -12,7 +12,7 @@
 			<div class="container products-wrapper">
 				<div class="d-flex align-items-center">
 					<h2 class="products-title">
-						<%= producto.nombre %>
+						<%= productos.nombre %>
 					</h2>
 					<p class="product-detail-description">
 						<a href="/product/product-add">Editar</a>
@@ -21,22 +21,22 @@
 				<div class="product-detail">
 					<div class="row">
 						<article class="col-12 col-lg-8 product-detail-info">
-							<img src="<%= producto.fotoProducto %>" alt="" class="product-detail-img">
+							<img src="<%= productos.fotoProducto %>" alt="" class="product-detail-img"> <!-- //PORQUE NO CARGA LA FOTO// -->
 							<p class="product-detail-description">
-								<%= producto.descripcion %>
+								<%= productos.descripcion %>
 							</p>
 						</article>
 						<div class="col-12 col-lg-4">
 							<section class="comments">
 								<% for( let i=0; i < 3; i++ ) { %>
 									<article>
-										<img src="<%= producto.comentarios[i].imagenPerfil %>" alt=""> 
+										<img src="<%= productos.comentarios[i].fotoPerfil %>" alt="">  
 										<div class="data">
 											<p class="user">
 												<strong> <a href="/users/profile"></a>
-													<%= producto.comentarios[i].nombreUsuario %>
+													<%= productos.comentarios[i].nombreUsuario %>
 												</strong>
-												<%= producto.comentarios[i].texto %>
+												<%= productos.comentarios[i].texto %> 
 											</p>
 										</div>
 									</article>

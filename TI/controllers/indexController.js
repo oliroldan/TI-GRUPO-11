@@ -10,7 +10,18 @@ const index = {
       .catch(function (error) {
         return console.log(error)
       });
-  }
+  },
+  comentario: function (req, res, next) {
+    db.Comentario.findAll()
+    .then(function (respuesta) {
+      //return res.send(respuesta)
+      return res.render('comentario', {comentario: respuesta , title: 'Comentario' })
+    })
+    //datos.productos[4]
+    .catch(function (error) {
+      return console.log(error)
+    });  
+    }
 };
 
 /* exportar el modulo */

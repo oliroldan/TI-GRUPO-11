@@ -5,7 +5,8 @@ const users = {
     index: function (req, res, next) {
       db.Usuario.findAll()
       .then(function (respuesta) {
-        return res.send(respuesta)
+       // return res.send(respuesta)
+        res.render('profile', { usuario: respuesta, title: 'Profile' });
       })
       .catch(function (error) {
         return console.log(error)
