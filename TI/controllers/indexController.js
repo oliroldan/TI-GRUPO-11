@@ -14,10 +14,9 @@ const index = {
   comentario: function (req, res, next) {
     db.Comentario.findAll()
     .then(function (respuesta) {
-      //return res.send(respuesta)
       return res.render('comentario', {comentario: respuesta , title: 'Comentario' })
     })
-    //datos.productos[4]
+    //datos.productos[4] ??
     .catch(function (error) {
       return console.log(error)
     });  

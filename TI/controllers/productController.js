@@ -6,10 +6,9 @@ const product = {
     index: function (req, res, next) {
       db.Producto.findAll()
       .then(function (respuesta) {
-        //return res.send(respuesta)
         return res.render('product', {productos: respuesta , title: 'Products' })
       })
-      //datos.productos[4]
+      //datos.productos[4] ??
       .catch(function (error) {
         return console.log(error)
       });  
@@ -17,7 +16,6 @@ const product = {
     add: function (req, res, next) {
       db.Usuario.findAll()
       .then(function (result) {
-        //return res.send(result)
         res.render('product-add', { usuario: result, title: 'Products-add' });
       })
       .catch(function (error) {
@@ -31,12 +29,12 @@ const product = {
           nombre: {[op.like]: "%" + productoBuscado + "%"}
         }
       }
-
       //return res.send(productoBuscado)
+
       db.Producto.findOne(filtrado)
       .then(function (productos) {
         //res.send(productos)
-        res.render('search-results', { listado: productos, title: 'Search results' });
+        res.render('search-results', {listado: productos, title: 'Search results'});
         //datos.filtrarProductos(productoBuscado)
       }) 
       .catch(function (error) {
@@ -56,15 +54,14 @@ const product = {
         return console.log(err);
       })
 
-      return res.send(productoBuscado)
-        
+      return res.send(productoBuscado) 
     },
     store: function(req, res) {
       let form = req.body;
       //return res.send(form)
       db.Producto.create(form)
       .then((result) => {
-          return res.redirect("/product")
+        return res.redirect("/product")
       }).catch((err) => {
         return console.log(err);
       })
@@ -101,7 +98,7 @@ const product = {
       db.Comentario.findAll()
       .then(function (respuesta) {
         return res.send(respuesta)
-        return res.render('comentario', {comentario: respuesta , title: 'Comentario' })
+        // return res.render('comentario', {comentario: respuesta , title: 'Comentario' })
       })
       //datos.productos[4]
       .catch(function (error) {

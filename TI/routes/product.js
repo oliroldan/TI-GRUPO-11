@@ -4,6 +4,7 @@ var router = express.Router();
 /* requerir el modelo del controlador */
 const productController = require('../controllers/productController')
 
+// GET todos los productos
 router.get('/', productController.index);
 
 router.get('/product-add', productController.add);

@@ -12,10 +12,10 @@ const users = {
         return console.log(error)
       });  
     },
-   // index: function (result) {
-   //     return res.send(result)
-   //     res.render('profile', { usuario: datos.usuario, productos: datos.productos, title: 'Profile' });
-   //   },
+    /* index: function (result) {
+      return res.send(result)
+      res.render('profile', { usuario: datos.usuario, productos: datos.productos, title: 'Profile' });
+    }, */
     register: function (req, res, next) {
         res.render('register', { title: 'Registrarse' });
     },

@@ -9,24 +9,24 @@ router.get('/', function (req, res, next) {
   res.send('respond with a resource');
 });
 
-// GET para el perfil
 router.get('/profile', usersController.index);
 
-/* mostrar formulario LOGIN */
+/* LOGIN mostrar formulario */
 router.get('/login', usersController.login);
 
+// POST de login
 router.post("/login", usersController.loginUser)
 
-/* LOGOUT */
+// logout
 router.post('/logout', usersController.logout);
 
-/* mostrar formulario REGISTER */
+/* GET para mostrar formulario register */
 router.get('/register', usersController.register);
 
-/* POST capturar la info del formulario */
+/* POST para capturar la info del formulario */
 router.post("/register", usersController.store)
 
-// ruta por GET de editar perfil
+// GET de editar perfil
 router.get('/profile-edit/:idPerfil', usersController.edit);
 
 //router.post("/profile-edit", usersController.edit)
