@@ -1,5 +1,6 @@
 /* crear el modulo en si */
-const db = require("../database/models")
+const db = require("../database/models");
+const bcrypt = require('bcryptjs')
 
 const users = {
     index: function (req, res, next) {
@@ -26,18 +27,18 @@ const users = {
       let form = req.body;
 
       let filtro = {
-          where: [{email: form.email}]
+          where: [{mail: form.email}]
       };
 
-      db.User.findOne(filtro)
+      db.Usuario.findOne(filtro)
       .then((result) => {
           if (result != null) {  
-              let comparacion = bcrypt.compareSync(form.password, result.password);
+              let comparacion = bcrypt.compareSync(form.password, result.contra);
 
               if (comparacion) {
                   req.session.user = result;
-                  if (form.rememberme != undefined) {
-                      res.cookie("userId", result.id, {maxAge: 1000 * 60 * 35})
+                  if (form.recordarme != undefined) {
+                      res.cookie("idUsuario", result.id, {maxAge: 1000 * 60 * 35})
                   }
                   return res.redirect("/");
               } else {
@@ -66,8 +67,12 @@ const users = {
     },
     store: function(req, res) {
         let form = req.body;
+        let usuario = {
+          mail: form.email,
+          contra: bcrypt.hashSync(form.password, 10)
+        }
         
-        db.Usuario.create(form)
+        db.Usuario.create(usuario)
         .then((result) => {
             return res.redirect("/users/login")
         }).catch((err) => {
@@ -84,7 +89,7 @@ const users = {
       //return res.send(form)
 
       db.Usuario.update(form, filtrado)
-      .then(function(params) {
+      .then(function(result) {
         return res.redirect("/profile/id/" + form.id)
       })
       .catch(function(err) {
@@ -93,7 +98,7 @@ const users = {
     },
     logout: (req, res) => {
       req.session.destroy();
-      res.clearCookie("userId")
+      res.clearCookie("idUsuario")
       return res.redirect("/")
     }
 };

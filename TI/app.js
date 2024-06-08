@@ -4,14 +4,22 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
+const db = require('./database/models')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productRouter = require('./routes/product');
 
+app.use('/', indexRouter);
+
+app.use('/users', usersRouter);
+
+app.use('/product', productRouter);
+
 var app = express();
 
 // view engine setup
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -21,23 +29,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-
-app.use('/users', usersRouter);
-
-//app.use('/profile', usersRouter);
-//app.use('/login', usersRouter);
-//app.use('/register', usersRouter);
-//app.use('/profile-edit', usersRouter);
-
-app.use('/product', productRouter);
-
 // catch 404 and forward to error handler
+
 app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
+
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -48,12 +47,15 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-//configuracion de session//
+// configuracion de session
+
 app.use(session({
   secret: "MyApp",
   resave: false,
   saveUninitialized: true
 }))
+
+// pasar info de session a locals
 
 app.use(function(req, res, next){
   if( req.session.user != undefined ){
@@ -61,6 +63,28 @@ app.use(function(req, res, next){
   }
 
   return next()
+})
+
+// configuracion de cookie
+
+app.use(function(req, res, next) {
+  if (req.cookies.idUsuario != undefined && req.session.user == undefined) {
+    let id = req.cookies.idUsuario; // puede ser cualquier numero
+
+    db.Usuario.findByPk(id)
+    .then(function(result) {
+      req.session.user = result;
+      res.locals.user = result;
+
+      return next();
+    }).catch(function(error) {
+
+      return console.log(error);
+    })
+
+  } else {
+    return next
+  }
 })
 
 module.exports = app;
