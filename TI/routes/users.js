@@ -15,7 +15,7 @@ router.get('/profile', usersController.index);
 /* mostrar formulario LOGIN */
 router.get('/login', usersController.login);
 
-//router.post("/login", usersController.store)
+router.post("/login", usersController.loginUser)
 
 /* LOGOUT */
 router.post('/logout', usersController.logout);
