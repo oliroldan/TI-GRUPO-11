@@ -18,4 +18,6 @@ router.post("/update", productController.update);
 
 router.get("/comentario", productController.comentario);
 
+router.post("/delete", productController.delete);
+
 module.exports = router;

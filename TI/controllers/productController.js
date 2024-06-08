@@ -13,7 +13,7 @@ const product = {
       .catch(function (error) {
         return console.log(error)
       });  
-      },
+    },
     add: function (req, res, next) {
       db.Usuario.findAll()
       .then(function (result) {
@@ -23,92 +23,107 @@ const product = {
       .catch(function (error) {
         return console.log(error)
       });    
-      },
+    },
     search: function (req, res, next) {
-        let productoBuscado = req.query.search;
-        let filtrado = {
-          where: {
-            nombre: {[op.like]: "%" + productoBuscado + "%"}
-          }
+      let productoBuscado = req.query.search;
+      let filtrado = {
+        where: {
+          nombre: {[op.like]: "%" + productoBuscado + "%"}
         }
+      }
 
-        //return res.send(productoBuscado)
-        db.Producto.findOne(filtrado)
-        .then(function (productos) {
-          //res.send(productos)
-          res.render('search-results', { listado: productos, title: 'Search results' });
-          //datos.filtrarProductos(productoBuscado)
-        }) 
-        .catch(function (error) {
-         return console.log(error)
-       })   
-      },
-
+      //return res.send(productoBuscado)
+      db.Producto.findOne(filtrado)
+      .then(function (productos) {
+        //res.send(productos)
+        res.render('search-results', { listado: productos, title: 'Search results' });
+        //datos.filtrarProductos(productoBuscado)
+      }) 
+      .catch(function (error) {
+        return console.log(error)
+      })   
+    },
     filtrarProductos: function(req, res) {
-        let productoBuscado = req.params.productoBuscado; 
-        
-        db.Producto.findByPk(productoBuscado)
-        .then(function(resultado) {
-          return res.render("Productos", {listado : resultado});
-          //return res.render("Productos", {listado : datos.filtrarProductos(productoBuscado)})
-          //return res.send(resultado)
-        })
-        .catch(function(err){
-          return console.log(err);
-        })
+      let productoBuscado = req.params.productoBuscado; 
+      
+      db.Producto.findByPk(productoBuscado)
+      .then(function(resultado) {
+        return res.render("Productos", {listado : resultado});
+        //return res.render("Productos", {listado : datos.filtrarProductos(productoBuscado)})
+        //return res.send(resultado)
+      })
+      .catch(function(err){
+        return console.log(err);
+      })
 
-        return res.send(productoBuscado)
+      return res.send(productoBuscado)
         
-      },
-      store: function(req, res) {
-        let form = req.body;
-        //return res.send(form)
-        db.Producto.create(form)
-        .then((result) => {
-            return res.redirect("/product")
-        }).catch((err) => {
-          return console.log(err);
-        })
-      },
-      edit: function (req, res, next) {
-        let idProducto = req.params.idProducto;
-  
-        db.Usuario.findByPk(idProducto)
-        .then(function (resultId) {
-          res.render('product', {productos: resultId})
-        })
-        .catch(function (err) {
-          return console.log(err);
-        })
-      },
-      update: function(req, res) {
-        let form = req.body
-        let filtrado = {
-          where: {
-            id: form.id
-          }
+    },
+    store: function(req, res) {
+      let form = req.body;
+      //return res.send(form)
+      db.Producto.create(form)
+      .then((result) => {
+          return res.redirect("/product")
+      }).catch((err) => {
+        return console.log(err);
+      })
+    },
+    edit: function (req, res, next) {
+      let idProducto = req.params.idProducto;
+
+      db.Usuario.findByPk(idProducto)
+      .then(function (resultId) {
+        res.render('product', {productos: resultId})
+      })
+      .catch(function (err) {
+        return console.log(err);
+      })
+    },
+    update: function(req, res) {
+      let form = req.body
+      let filtrado = {
+        where: {
+          id: form.id
         }
-        //return res.send(form)
+      }
+      //return res.send(form)
 
-        db.Producto.update(form, filtrado)
-        .then(function(params) {
-          return res.redirect("/product/id/" + form.id)
-        })
-        .catch(function(err) {
-          return console.log(err);
-        })
-      },
-      comentario: function (req, res, next) {
-        db.Comentario.findAll()
-        .then(function (respuesta) {
-          return res.send(respuesta)
-          return res.render('comentario', {comentario: respuesta , title: 'Comentario' })
-        })
-        //datos.productos[4]
-        .catch(function (error) {
-          return console.log(error)
-        });  
-        },
+      db.Producto.update(form, filtrado)
+      .then(function(params) {
+        return res.redirect("/product/id/" + form.id)
+      })
+      .catch(function(err) {
+        return console.log(err);
+      })
+    },
+    comentario: function (req, res, next) {
+      db.Comentario.findAll()
+      .then(function (respuesta) {
+        return res.send(respuesta)
+        return res.render('comentario', {comentario: respuesta , title: 'Comentario' })
+      })
+      //datos.productos[4]
+      .catch(function (error) {
+        return console.log(error)
+      });  
+    },
+    delete: function (req, res) {
+      let form = req.body;
+      let filtrado = {
+        where: {
+          id: form.id
+        }
+      }
+      //return res.send(form.id);
+      db.Producto.destroy(filtrado)
+      .then(function (params) {
+        return res.redirect("/product/")
+      })
+      .catch(function (err) {
+        return console.log(err);
+      })
+    },
 };
 
 /* exportar el modulo */
