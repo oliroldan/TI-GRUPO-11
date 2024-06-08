@@ -22,6 +22,35 @@ const users = {
     login: function (req, res, next) {
         res.render('login', { title: 'Ingresar' });
     },
+    loginUser: function (req, res) {
+      let form = req.body;
+
+      let filtro = {
+          where: [{email: form.email}]
+      };
+
+      db.User.findOne(filtro)
+      .then((result) => {
+          if (result != null) {  
+              let comparacion = bcrypt.compareSync(form.password, result.password);
+
+              if (comparacion) {
+                  req.session.user = result;
+                  if (form.rememberme != undefined) {
+                      res.cookie("userId", result.id, {maxAge: 1000 * 60 * 35})
+                  }
+                  return res.redirect("/");
+              } else {
+                  return res.send("Error en la contraseña");
+              }
+          } else {
+              return res.send("No hay mail parecidos a: " + form.email);
+          }
+
+      }).catch((err) => {
+          return console.log(err);
+      });
+  },
     edit: function (req, res, next) {
       let idPerfil = req.params.idPerfil;
 
@@ -62,7 +91,11 @@ const users = {
         return console.log(err);
       })
     },
-    
+    logout: (req, res) => {
+      req.session.destroy();
+      res.clearCookie("userId")
+      return res.redirect("/")
+    }
 };
 
 /* exportar el modulo */
