@@ -10,13 +10,15 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productRouter = require('./routes/product');
 
+var app = express();
+
 app.use('/', indexRouter);
 
 app.use('/users', usersRouter);
 
 app.use('/product', productRouter);
 
-var app = express();
+
 
 // view engine setup
 

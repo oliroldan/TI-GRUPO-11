@@ -57,17 +57,18 @@ const product = {
       return res.send(productoBuscado) 
     },
     detalle: function(req, res) {
-      let idProducto = req.params.idProducto;
+      let idProducto = req.params.id;
 
       let criterio = {
           include: [
-            {association: "genre"}, // el alias de la relacion
-            {association: "actors"}
+            {association: "usuario"},
+            {association: "comentario"}
           ]
       }
 
       db.Producto.findByPk(idProducto, criterio)
       .then((result) => {
+        return res.send(result)
         return res.render("product", {product: result});
       }).catch((error) => {
         return console.log(error);
@@ -110,17 +111,6 @@ const product = {
       .catch(function(err) {
         return console.log(err);
       })
-    },
-    comentario: function (req, res, next) {
-      db.Comentario.findAll()
-      .then(function (respuesta) {
-        return res.send(respuesta)
-        // return res.render('comentario', {comentario: respuesta , title: 'Comentario' })
-      })
-      //datos.productos[4]
-      .catch(function (error) {
-        return console.log(error)
-      });  
     },
     delete: function (req, res) {
       let form = req.body;
