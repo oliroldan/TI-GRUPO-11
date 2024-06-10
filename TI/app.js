@@ -4,7 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
-const db = require('./database/models')
+const db = require('./database/models');
+const app = express();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -16,7 +17,7 @@ app.use('/users', usersRouter);
 
 app.use('/product', productRouter);
 
-var app = express();
+
 
 // view engine setup
 
