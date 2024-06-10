@@ -40,11 +40,11 @@ CREATE TABLE comentarios (
 );
 
 -- datos de 5 usuarios
-INSERT INTO usuarios VALUES (DEFAULT, 'mora1234gmail.com', '****', '2023-10-29', 46738291, './public/fotosPerfil/foto1.aviv', DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO usuarios VALUES (DEFAULT, 'luz1234gmail.com', '****', '2022-08-11', 44388920, './public/fotosPerfil/foto2.jpeg', DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO usuarios VALUES (DEFAULT, 'sol1234gmail.com', '****', '2023-12-10', 39637191, './public/fotosPerfil/foto3.aviv', DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO usuarios VALUES (DEFAULT, 'maia1234gmail.com', '****', '2020-10-21', 41134256, './public/fotosPerfil/foto4.webp', DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO usuarios VALUES (DEFAULT, 'mariana1234gmail.com', '****', '2024-10-07', 43950345, './public/fotosPerfil/foto5.png', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios VALUES (DEFAULT, 'mora', 'mora1234@gmail.com', '****', '2023-10-29', 46738291, '/fotosPerfil/public/foto1.avif', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios VALUES (DEFAULT, 'luz', 'luz1234@gmail.com', '****', '2022-08-11', 44388920, '/fotosPerfil/foto2.jpeg', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios VALUES (DEFAULT, 'sol', 'sol1234@gmail.com', '****', '2023-12-10', 39637191, '/fotosPerfil/foto3.avif', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios VALUES (DEFAULT, 'maia', 'maia1234@gmail.com', '****', '2020-10-21', 41134256, '/fotosPerfil/foto4.webp', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios VALUES (DEFAULT, 'mariana', 'mariana1234@gmail.com', '****', '2024-10-07', 43950345, '/fotosPerfil/foto5.png', DEFAULT, DEFAULT, DEFAULT);
 
 -- datos de 10 productos
 INSERT INTO productos VALUES (DEFAULT, '/fotosProductos/baseFitme.jpg', 'Base Fit Me', 'La base Fit Me® Matte + Poreless matifica la piel y refina los poros para un acabado naturalmente hermoso e impecable.', 1, DEFAULT, DEFAULT, DEFAULT);

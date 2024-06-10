@@ -13,7 +13,7 @@ router.get('/product-add', productController.add);
 
 router.get('/search-results', productController.search)
 
-router.post("/product-add", productController.store);
+router.post("/productAdd", productController.store);
 
 router.get('/edit/:idProducto', productController.edit);
 

@@ -40,8 +40,7 @@ module.exports = function (sequelize, dataTypes) {
         Producto.belongsTo(models.Usuario, {
             as: "usuario", // alias: como voy a llamar a esa relacion
             foreignKey: "idUsuario" // foreignKey que relaciona ambas tablas
-        })
-
+        }),
         Producto.hasMany(models.Comentario, {
             as: "comentario", // alias: como voy a llamar a esa relacion
             foreignKey: "idProductos" // foreignKey que relaciona ambas tablas 

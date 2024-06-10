@@ -68,15 +68,17 @@ const product = {
 
       db.Producto.findByPk(idProducto, criterio)
       .then((result) => {
-        return res.send(result)
-        return res.render("product", {product: result});
+        return res.render("product", {productos: result});
       }).catch((error) => {
         return console.log(error);
       });
     },
     store: function(req, res) {
+
       let form = req.body;
-      //return res.send(form)
+
+      return res.send(form)
+
       db.Producto.create(form)
       .then((result) => {
         return res.redirect("/product")

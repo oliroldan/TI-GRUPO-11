@@ -20,21 +20,21 @@
 					</div>
 					<!-- Show the "ultimos" products -->
 					<h2 class="col-12">
-						<form method="post">
+						<form action="/product/productAdd" method="post">
 							<div>
-								<input id="imagen" type="file" name="fotoProducto" value="" placeholder="Imagen">
+								<input id="imagen" type="text" name="fotoProducto"  placeholder="Imagen">
 							</div>
 							<br>
 							<div>
-								<input id="nombre" type="text" name="nombre" value="" placeholder="Nombre del producto">
+								<input id="nombre" type="text" name="nombre" placeholder="Nombre del producto">
 							</div>
 							<br>
 							<div>
-								<input id="descripción" type="text" name="descripción" value="" placeholder="Descripción del producto">
+								<input id="descripción" type="text" name="descripción"  placeholder="Descripción del producto">
 							</div>
 							<br>
 							<div>
-								<input type="hidden" name="id" value="<%= productos.id %>">
+								<input type="hidden" name="idUsuario" value="<%= locals.user.id %>">
 							</div>
 							<div>
 								<button type="submit">Enviar</button>

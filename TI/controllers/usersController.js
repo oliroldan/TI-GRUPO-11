@@ -26,15 +26,14 @@ const users = {
     },
     loginUser: function (req, res) {
       let form = req.body;
-
       let filtro = {
-          where: [{mail: form.email}]
+          where: [{mail: form.mail}]
       };
 
       db.Usuario.findOne(filtro)
       .then((result) => {
           if (result != null) {  
-              let comparacion = bcrypt.compareSync(form.password, result.contra);
+              let comparacion = bcrypt.compareSync(form.mail, result.contra);
 
               if (comparacion) {
                   req.session.user = result;

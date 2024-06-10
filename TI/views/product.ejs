@@ -19,7 +19,7 @@
 						<%= productos.nombre %>
 					</h2>
 					<p class="product-detail-description">
-						<a href="/product/product-add">Editar</a>
+						<a href="/product/edit/<%= productos.id %>">Editar</a>
 					</p>
 				</div>
 				<div class="product-detail">
@@ -32,15 +32,15 @@
 						</article>
 						<div class="col-12 col-lg-4">
 							<section class="comments">
-								<% for( let i=0; i < 3; i++ ) { %>
+								<% for( let i=0; i < productos.comentario.length; i++ ) { %>
 									<article>
-										<img src="<%= usuario.fotoPerfil %>" alt="">  
+										<img src="<%= productos.usuario.fotoPerfil %>" alt="">  
 										<div class="data">
 											<p class="user">
 												<strong> <a href="/users/profile"></a>
-													<%= productos.comentarios[i].nombreUsuario %>
+													<%= productos.usuario.nombre %>
 												</strong>
-												<%= productos.comentarios[i].texto %> 
+												<%= productos.comentario[i].comentario %> 
 											</p>
 										</div>
 									</article>

@@ -16,20 +16,25 @@
 			<div class="container products-wrapper">
 				<div class="row">
 					<div class="col-12">
-						<h2 class="products-title">Ingresar</h2>
+						<h2 class="products-title">Agregar productos:</h2>
 					</div>
 					<!-- Show the "ultimos" products -->
 					<h2 class="col-12">
-						<form action="/users/login" method="POST">
+						<form method="post">
 							<div>
-								<input id="usuario" type="email" name="usuario" value="" placeholder="usuario o mail">
+								<input id="imagen" type="file" name="fotoProducto" value="" placeholder="Imagen">
 							</div>
+							<br>
 							<div>
-								<input id="password" type="password" name="password" value="" placeholder="password">
+								<input id="nombre" type="text" name="nombre" value="" placeholder="Nombre del producto">
 							</div>
+							<br>
 							<div>
-								<label for="recordarme">Recordarme</label>
-								<input id="recordarme" type="checkbox" name="recordarme" value="recordarme">
+								<input id="descripción" type="text" name="descripción" value="" placeholder="Descripción del producto">
+							</div>
+							<br>
+							<div>
+								<input type="hidden" name="id" value="<%= productos.id %>">
 							</div>
 							<div>
 								<button type="submit">Enviar</button>
