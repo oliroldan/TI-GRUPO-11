@@ -39,16 +39,12 @@ module.exports = function (sequelize, dataTypes) {
     Producto.associate = function(models) {
         Producto.belongsTo(models.Usuario, {
             as: "usuario", // alias: como voy a llamar a esa relacion
-<<<<<<< HEAD
-            foreignKey: "idUsuario"
+            foreignKey: "idUsuario" // foreignKey que relaciona ambas tablas
         })
 
         Producto.hasMany(models.Comentario, {
             as: "comentario", // alias: como voy a llamar a esa relacion
-            foreignKey: "idProductos"
-=======
-            //foreignKey que relaciona ambas tablas 
->>>>>>> e04b43ef93615db8300748f29169df2f4f7e0f82
+            foreignKey: "idProductos" // foreignKey que relaciona ambas tablas 
         })
     }
 
