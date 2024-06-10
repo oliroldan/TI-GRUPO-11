@@ -6,6 +6,9 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER
         },
+        nombre: {
+            type: dataTypes.STRING
+        },
         mail: {
             type: dataTypes.STRING
         },
@@ -38,5 +41,11 @@ module.exports = function (sequelize, dataTypes) {
     };
 
     let Usuario = sequelize.define(alias, cols, config);
+    Usuario.associate = function(models) {
+        Usuario.hasMany(models.Comentario, {
+            as: "comentario", // alias: como voy a llamar a esa relacion
+            foreignKey: "idUsuario" // foreignKey que relaciona ambas tablas 
+        })
+    }
     return Usuario;
 }

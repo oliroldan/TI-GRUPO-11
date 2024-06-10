@@ -8,6 +8,7 @@ const users = {
       .then(function (respuesta) {
        // return res.send(respuesta)
         res.render('profile', { usuario: respuesta, title: 'Profile' });
+        
       })
       .catch(function (error) {
         return console.log(error)
@@ -45,7 +46,7 @@ const users = {
                   return res.send("Error en la contraseña");
               }
           } else {
-              return res.send("No hay mail parecidos a: " + form.email);
+              return res.send("No hay mail parecidos a: " + form.mail);
           }
 
       }).catch((err) => {

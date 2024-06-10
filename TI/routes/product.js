@@ -5,6 +5,8 @@ var router = express.Router();
 const productController = require('../controllers/productController')
 
 // GET todos los productos
+router.get('/', productController.index);
+
 router.get('/detalle/:id', productController.detalle);
 
 router.get('/product-add', productController.add);

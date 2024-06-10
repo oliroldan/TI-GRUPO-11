@@ -4,6 +4,7 @@ USE datos;
 
 CREATE TABLE usuarios (
 	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(250),
 	mail VARCHAR(250),
     contra VARCHAR(250),
     fecha DATE,
@@ -46,16 +47,16 @@ INSERT INTO usuarios VALUES (DEFAULT, 'maia1234gmail.com', '****', '2020-10-21',
 INSERT INTO usuarios VALUES (DEFAULT, 'mariana1234gmail.com', '****', '2024-10-07', 43950345, './public/fotosPerfil/foto5.png', DEFAULT, DEFAULT, DEFAULT);
 
 -- datos de 10 productos
-INSERT INTO productos VALUES (DEFAULT, './public/productos/baseFitme.jpg', 'Base Fit Me', 'La base Fit Me® Matte + Poreless matifica la piel y refina los poros para un acabado naturalmente hermoso e impecable.', 1, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/blushMac.jpg', 'Blush MAC', 'Mac Cosmetics Powder Blush Rubor Polvo Varios Tonos 06g. Se aplica de manera uniforme, se adhiere a la piel para lograr una aplicación de color con aspecto natural que permanece durante todo el día.', 2, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/bronzer.jpg', 'Bronzer Rare Beauty', 'Los Bronzer Sticks de Rare Beauty son una adición innovadora y versátil para el contorneado, diseñados para ofrecer una aplicación sencilla y resultados naturales.', 3, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/lipglossDior.jpg', 'Lip Gloss Dior', 'Descubre el brillo y el glamour en cada sonrisa con el lip gloss Dior, una verdadera obra maestra de la belleza que elevará tus labios a un proximo nivel', 4, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/mascara.jpg', 'Mascara Maybelline','Es un cosmético totalmente a prueba de agua, formulado con extracto de bambú y fibras para ayudar a cuidar tus pestañas. Además, no deja grumos, ni manchas.', 5, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/bronzerChanel.jpg', 'Bronzer Chanel', 'Esta crema gel bronceadora única, ligera y fácil de difuminar ofrece un acabado delicado y aterciopelado para un resplandor bronceado natural.', 1, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/base2.jpg', 'Base Essence', 'Base de maquillaje en polvo, resistente al agua y matificante, con gran cobertura y 16 horas de duración.', 2, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/highlighterRare.jpg', 'Highlighter Rare Beauty', 'Un iluminador en polvo innovador que le da a la piel un brillo instantáneo como el del vidrio para un brillo fácil y de apariencia natural que dura', 3, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/eyeshadow.jpg', 'Eyeshadow Charlotte Tilbury', 'Paleta de sombras de ojos con tonos nude rosa, rosa intenso y bronce melocotón para lograr unos ojos Pillow Talk DESLUMBRANTES Y SEDUCTORES.', 4, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO productos VALUES (DEFAULT, './public/productos/skincare2.jpg', 'Skincare Todomoda', 'Tónico iluminador con ácido hialurónico y extracto de sandía, arándanos, naranja y limón. Reabastece la hidratación para nutrir y suavizar la piel.',5, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, '/fotosProductos/baseFitme.jpg', 'Base Fit Me', 'La base Fit Me® Matte + Poreless matifica la piel y refina los poros para un acabado naturalmente hermoso e impecable.', 1, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, '/fotosProductos/blushMac.jpg', 'Blush MAC', 'Mac Cosmetics Powder Blush Rubor Polvo Varios Tonos 06g. Se aplica de manera uniforme, se adhiere a la piel para lograr una aplicación de color con aspecto natural que permanece durante todo el día.', 2, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, '/fotosProductos/bronzer.jpg', 'Bronzer Rare Beauty', 'Los Bronzer Sticks de Rare Beauty son una adición innovadora y versátil para el contorneado, diseñados para ofrecer una aplicación sencilla y resultados naturales.', 3, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, '/fotosProductos/lipglossDior.jpg', 'Lip Gloss Dior', 'Descubre el brillo y el glamour en cada sonrisa con el lip gloss Dior, una verdadera obra maestra de la belleza que elevará tus labios a un proximo nivel', 4, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, '/fotosProductos/mascara.jpg', 'Mascara Maybelline','Es un cosmético totalmente a prueba de agua, formulado con extracto de bambú y fibras para ayudar a cuidar tus pestañas. Además, no deja grumos, ni manchas.', 5, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, '/fotosProductos/bronzerChanel.jpg', 'Bronzer Chanel', 'Esta crema gel bronceadora única, ligera y fácil de difuminar ofrece un acabado delicado y aterciopelado para un resplandor bronceado natural.', 1, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, '/fotosProductos/base2.jpg', 'Base Essence', 'Base de maquillaje en polvo, resistente al agua y matificante, con gran cobertura y 16 horas de duración.', 2, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, '/fotosProductos/highlighterRare.jpg', 'Highlighter Rare Beauty', 'Un iluminador en polvo innovador que le da a la piel un brillo instantáneo como el del vidrio para un brillo fácil y de apariencia natural que dura', 3, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, '/fotosProductos/eyeshadow.jpg', 'Eyeshadow Charlotte Tilbury', 'Paleta de sombras de ojos con tonos nude rosa, rosa intenso y bronce melocotón para lograr unos ojos Pillow Talk DESLUMBRANTES Y SEDUCTORES.', 4, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO productos VALUES (DEFAULT, '/fotosProductos/skincare2.jpg', 'Skincare Todomoda', 'Tónico iluminador con ácido hialurónico y extracto de sandía, arándanos, naranja y limón. Reabastece la hidratación para nutrir y suavizar la piel.',5, DEFAULT, DEFAULT, DEFAULT);
 
 -- 3 comentarios por cada producto
 

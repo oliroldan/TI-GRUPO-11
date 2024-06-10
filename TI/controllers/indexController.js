@@ -5,7 +5,7 @@ const index = {
   index: function (req, res, next) {
     db.Producto.findAll()
       .then(function (result) {
-        return res.send(result)
+        //return res.send(result)
         res.render('index', { productos: result, title: 'Express' })
       })
       .catch(function (error) {
