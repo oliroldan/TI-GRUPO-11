@@ -51,7 +51,7 @@ const users = {
       }).catch((err) => {
           return console.log(err);
       });
-  },
+    },
     edit: function (req, res, next) {
       let idPerfil = req.params.idPerfil;
 
