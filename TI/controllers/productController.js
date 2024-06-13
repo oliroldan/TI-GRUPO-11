@@ -29,9 +29,9 @@ const product = {
           nombre: {[op.like]: "%" + productoBuscado + "%"}
         }
       }
-      return res.send(productoBuscado)
+      //return res.send(productoBuscado)
 
-      db.Producto.findOne(filtrado)
+      db.Producto.findAll(filtrado)
       .then(function (productos) {
         //res.send(productos)
         res.render('search-results', {listado: productos, title: 'Search results'});
