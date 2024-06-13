@@ -16,6 +16,7 @@ const product = {
     add: function (req, res, next) {
       db.Usuario.findAll()
       .then(function (result) {
+        //res.send(result)
         res.render('product-add', {usuario: result, title: 'Products-add' });
       })
       .catch(function (error) {
