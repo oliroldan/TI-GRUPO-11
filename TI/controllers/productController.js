@@ -14,7 +14,7 @@ const product = {
       });  
     },
     add: function (req, res, next) {
-      db.Usuario.findAll()
+      db.Usuario.findAll() //create
       .then(function (result) {
         //res.send(result)
         res.render('product-add', {usuario: result, title: 'Products-add' });
@@ -93,9 +93,10 @@ const product = {
     edit: function (req, res, next) {
       let idProducto = req.params.idProducto;
 
-      db.Usuario.findByPk(idProducto)
+      db.Producto.findByPk(idProducto)
       .then(function (resultId) {
-        res.render('product', {productos: resultId})
+        //res.send(resultId)
+        res.render('product-edit', {productos: resultId})
       })
       .catch(function (err) {
         return console.log(err);
@@ -134,6 +135,17 @@ const product = {
         return console.log(err);
       })
     },
+    addComment: function (req, res) {
+      let form = req.body;
+      db.Comentario.create(form)
+      .then(function(result) {
+        //return res.send(result)
+        return res.redirect("/product/detalle/" + form.idProducto)
+      })
+      .catch(function(err) {
+        return res.send(err)
+      })
+    }
 };
 
 /* exportar el modulo */

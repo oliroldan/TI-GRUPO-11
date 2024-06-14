@@ -5,7 +5,7 @@
 
 	<body>
 		<!-- Header -->
-		<% if (locals.users != undefined) { %>
+		<% if (locals.user != undefined) { %>
 			<%- include('./partials/headerLogueado') %>
 		 <% } else { %>
 			<%- include('./partials/header') %>
@@ -46,10 +46,16 @@
 									</article>
 									<% } %>
 							</section>
-							<form class="form" action="/product" method="get">
-								<input class="agregar comentario" type="text" value="" placeholder="Agregar comentario">
-								<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-							</form>
+
+							<% if (locals.user != undefined) { %>
+								<form class="form" action="/product/comentario" method="post">
+									<input class="agregar comentario" type="text" name="comentario" placeholder="Agregar comentario">
+									<input type="hidden" name="idUsuario" value="<%= user.id  %>">
+									<input type="hidden" name="idProductos" value="<%= productos.id %>"> //cambiar por PRODUCTO singular
+									<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+								</form>
+							 <% } %>
+							
 							<hr>
 						</div>
 					</div>

@@ -26,6 +26,7 @@ const users = {
     },
     loginUser: function (req, res) {
       let form = req.body;
+      //res.send(form)
       let filtro = {
           where: [{mail: form.mail}]
       };
@@ -33,7 +34,8 @@ const users = {
       db.Usuario.findOne(filtro)
       .then((result) => {
           if (result != null) {  
-              let comparacion = bcrypt.compareSync(form.mail, result.contra);
+              //return res.send(result)
+              let comparacion = bcrypt.compareSync(form.contra, result.contra);
 
               if (comparacion) {
                   req.session.user = result;
@@ -67,9 +69,13 @@ const users = {
     },
     store: function(req, res) {
         let form = req.body;
+        //return res.send(form)
         let usuario = {
-          mail: form.email,
-          contra: bcrypt.hashSync(form.password, 10)
+          mail: form.mail,
+          contra: bcrypt.hashSync(form.contra, 10)
+          // nombre: varchar(250) 
+          // fecha:  
+          // dni:
         }
         
         db.Usuario.create(usuario)

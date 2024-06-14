@@ -21,4 +21,6 @@ router.post("/update", productController.update);
 
 router.post("/delete", productController.delete);
 
+router.post("/comentario", productController.addComment);
+
 module.exports = router;
