@@ -28,7 +28,10 @@ const product = {
       let filtrado = {
         where: {
           nombre: {[op.like]: "%" + productoBuscado + "%"}
-        }
+        },
+        order: [
+          ["createdAt", "DESC"]
+        ]
       }
       //return res.send(productoBuscado)
 
