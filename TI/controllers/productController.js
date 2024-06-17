@@ -1,6 +1,8 @@
 /* crear el modulo en si */
 const db = require("../database/models")
 const op = db.Sequelize.Op
+const{validationResult} = require("express-validator")
+
 
 const product = {
     index: function (req, res, next) {
@@ -78,17 +80,25 @@ const product = {
       });
     },
     store: function(req, res) {
+      let errors = validationResult(req)
 
-      let form = req.body;
+      if (errors.isEmpty()){
+        let form = req.body;
 
-      return res.send(form)
-
-      db.Producto.create(form)
-      .then((result) => {
-        return res.redirect("/product")
-      }).catch((err) => {
-        return console.log(err);
+        return res.send(form)
+  
+        db.Producto.create(form)
+        .then((result) => {
+          return res.redirect("/product" )
+        }).catch((err) => {
+          return console.log(err);
+        })
+      } else {
+        return res.render("product-add", {
+          errors: errors.mapped(),
+          old: req.body
       })
+      }
     },
     edit: function (req, res, next) {
       let idProducto = req.params.idProducto;
@@ -103,21 +113,29 @@ const product = {
       })
     },
     update: function(req, res) {
-      let form = req.body
-      let filtrado = {
-        where: {
-          id: form.id
+      let errors = validationResult(req)
+      if (errors.isEmpty()){
+        let form = req.body
+        let filtrado = {
+          where: {
+            id: form.id
+          }
         }
+        //return res.send(form)
+        db.Producto.update(form, filtrado)
+        .then(function(params) {
+          return res.send(params)
+          //return res.redirect("/product/id/" + form.id)
+        })
+        .catch(function(err) {
+          return console.log(err);
+        })
+      } else {
+        return res.render("product-edit", {
+          errors: errors.mapped() ,
+          old: req.body
+        })
       }
-      //return res.send(form)
-
-      db.Producto.update(form, filtrado)
-      .then(function(params) {
-        return res.redirect("/product/id/" + form.id)
-      })
-      .catch(function(err) {
-        return console.log(err);
-      })
     },
     delete: function (req, res) {
       let form = req.body;
@@ -136,15 +154,30 @@ const product = {
       })
     },
     addComment: function (req, res) {
-      let form = req.body;
-      db.Comentario.create(form)
-      .then(function(result) {
-        //return res.send(result)
-        return res.redirect("/product/detalle/" + form.idProducto)
+      let errors = validationResult(req)
+
+      if (errors.isEmpty()){
+        let form = req.body;
+        let orden = {
+          order: [
+            ["createdAt", "DESC"]
+          ]
+        }
+        db.Comentario.create(form, orden)
+        .then(function(result) {
+          //return res.send(result)
+          return res.redirect("/product/detalle/" + form.idProducto)
+        })
+        .catch(function(err) {
+          return res.send(err)
+        })
+      } else {
+        return res.render("product", {
+          errors: errors.mapped(),
+          old: req.body
       })
-      .catch(function(err) {
-        return res.send(err)
-      })
+      }
+      
     }
 };
 

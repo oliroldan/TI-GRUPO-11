@@ -3,7 +3,12 @@ const db = require("../database/models");
 
 const index = {
   index: function (req, res, next) {
-    db.Producto.findAll()
+    let filtrado = {
+      order: [
+        ["createdAt", "DESC"]
+      ]
+    }
+    db.Producto.findAll(filtrado)
       .then(function (result) {
         //return res.send(result)
         res.render('index', { productos: result, title: 'Express' })

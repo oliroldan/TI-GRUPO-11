@@ -22,14 +22,24 @@
 					<h2 class="col-12"> <i>
 							<form method="post">
 								<div>
-									<input id="mail" type="email" name="mail" value="<%= perfil.mail %>" placeholder="email">
+									<input id="mail" type="email" name="mail" value="<%= perfil.mail %>" placeholder="mail">
+									<% if (locals.errors && errors.mail) { %>
+										<p class = “error” > <%= errors.mail.msg %> </p>
+									<% } %>
+									
 								</div>
 								<div>
-									<input id="usuario" type="text" name="usuario" value="" placeholder="usuario">
+									<input id="usuario" type="text" name="nombre" value="<%= perfil.nombre %>" placeholder="nombre">
+									<% if (locals.errors && errors.nombre) { %>
+										<p class = “error” > <%= errors.nombre.msg %> </p>
+									<% } %>
+									
 								</div>
 								<div>
-									<input id="contra" type="password" name="contra" value="<%= perfil.contra %>"
-										placeholder="password">
+									<input id="contra" type="password" name="contra" value="<%= perfil.contra %>" placeholder="password">
+									<% if (locals.errors && errors.contra) { %>
+										<p class = “error” > <%= errors.contra.msg %> </p>
+									<% } %>
 								</div>
 								<div>
 									<input id="fecha" type="date" name="fecha" value="<%= perfil.fecha %>"

@@ -61,41 +61,41 @@ INSERT INTO productos VALUES (DEFAULT, '/fotosProductos/skincare2.jpg', 'Skincar
 -- 3 comentarios por cada producto
 
 INSERT INTO comentarios VALUES (DEFAULT, "Buen producto! Me encanto.", 1, 1, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, 'No me parece que valga lo que sale, igualmente es un buen producto.', 1, 1, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, 'Impecable producto! Y muy buen envase.', 1, 1, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'No me parece que valga lo que sale, igualmente es un buen producto.', 1, 2, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Impecable producto! Y muy buen envase.', 1, 3, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, 'Tan bueno que se me termino al toque! Por lo que sale me tendria que haber controlado.', 2, 2, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, 'Buenisima calidad! Y el waterproof es real.', 2, 2, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, 'Fanatica del producto! Lo volveria a comprar.', 2, 2, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Tan bueno que se me termino al toque! Por lo que sale me tendria que haber controlado.', 2, 4, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Buenisima calidad! Y el waterproof es real.', 2, 5, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Fanatica del producto! Lo volveria a comprar.', 2, 6, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, "Muy buena base! La mejor de todas las que probe.", 3, 3, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, 'Increible producto! Selena no falla.', 3, 3, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, 'No soy fanatica del prducto.', 3, 3, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Muy buena base! La mejor de todas las que probe.", 3, 7, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Increible producto! Selena no falla.', 3, 8, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'No soy fanatica del prducto.', 3, 9, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, 'Cuestionable calidad, pero funciona y precio accesible.', 4, 4, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, 'No me gusto, pero buen precio.', 4, 4, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, 'Me encanto!! 10/10.', 4, 4, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Cuestionable calidad, pero funciona y precio accesible.', 4, 10, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'No me gusto, pero buen precio.', 4, 1, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Me encanto!! 10/10.', 4, 2, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, "Lo uso todos los dias, lo recomiendo.", 5, 5, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, 'Mi favorito!', 5, 5, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Lo uso todos los dias, lo recomiendo.", 5, 3, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, 'Mi favorito!', 5, 4, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO comentarios VALUES (DEFAULT, 'No me gusta la textura que deja.', 5, 5, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, "¡Este producto es increíble! Realmente mejora mi rutina de maquillaje.", 1, 1, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "No estoy muy convencida. No cumple todas mis expectativas.", 1, 1, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "El color es hermoso, pero la textura podría ser mejor.", 1, 1, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "¡Este producto es increíble! Realmente mejora mi rutina de maquillaje.", 1, 6, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "No estoy muy convencida. No cumple todas mis expectativas.", 1, 7, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "El color es hermoso, pero la textura podría ser mejor.", 1, 8, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, "Me encanta cómo queda en mi piel, pero desearía que durara un poco más.", 2, 2, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "¡Definitivamente vale la pena probarlo!", 2, 2, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "No es mi favorito, pero tiene sus puntos positivos.", 2, 2, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Me encanta cómo queda en mi piel, pero desearía que durara un poco más.", 2, 9, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "¡Definitivamente vale la pena probarlo!", 2, 10, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "No es mi favorito, pero tiene sus puntos positivos.", 2, 1, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, "La aplicación es fácil, pero el resultado final no es exactamente lo que esperaba.", 3, 3, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "La aplicación es fácil, pero el resultado final no es exactamente lo que esperaba.", 3, 2, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO comentarios VALUES (DEFAULT, "Un básico en mi rutina diaria. No puedo vivir sin él.", 3, 3, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "¡Me encanta el empaque! Realmente llama la atención.", 3, 3, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "¡Me encanta el empaque! Realmente llama la atención.", 3, 4, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, "La fragancia es agradable, pero desearía que durara más tiempo.", 4, 4, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "No sé si lo volvería a comprar. Hay otras opciones que prefiero.", 4, 4, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "Lo uso a diario y siempre recibo cumplidos sobre cómo luce.", 4, 4, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "La fragancia es agradable, pero desearía que durara más tiempo.", 4, 5, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "No sé si lo volvería a comprar. Hay otras opciones que prefiero.", 4, 6, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Lo uso a diario y siempre recibo cumplidos sobre cómo luce.", 4, 7, DEFAULT, DEFAULT, DEFAULT);
 
-INSERT INTO comentarios VALUES (DEFAULT, "La calidad es excelente, pero el precio es un poco alto para mi presupuesto.", 5, 5, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "Es un producto versátil que se adapta a diferentes ocasiones.", 5, 5, DEFAULT, DEFAULT, DEFAULT);
-INSERT INTO comentarios VALUES (DEFAULT, "Lo compré por recomendación y no me arrepiento en absoluto. ¡Es genial!", 5, 5, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "La calidad es excelente, pero el precio es un poco alto para mi presupuesto.", 5, 8, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Es un producto versátil que se adapta a diferentes ocasiones.", 5, 9, DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO comentarios VALUES (DEFAULT, "Lo compré por recomendación y no me arrepiento en absoluto. ¡Es genial!", 5, 10, DEFAULT, DEFAULT, DEFAULT);

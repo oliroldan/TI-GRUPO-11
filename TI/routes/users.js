@@ -3,6 +3,21 @@ var router = express.Router();
 
 /* requerir el modelo del controlador */
 const usersController = require('../controllers/usersController')
+const{body} = require("express-validator")
+const validations = [
+	body("nombre")
+	  .notEmpty().withMessage("debes ingresar un nombre").bail(),
+
+  body("mail")
+    .notEmpty().withMessage("debes ingresar un mail").bail()
+    .isEmail().withMessage("este mail pertenece a otro usuario").bail(),
+    
+
+  body("contra")
+    .notEmpty().withMessage("debes completar la password").bail()
+    .isLength({min: 4}).withMessage("la contra debe ser mas larga")
+]
+
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -24,14 +39,14 @@ router.post('/logout', usersController.logout);
 router.get('/register', usersController.register);
 
 /* POST para capturar la info del formulario */
-router.post("/register", usersController.store)
+router.post("/register", validations, usersController.store)
 
 // GET de editar perfil
 router.get('/profile-edit/:idPerfil', usersController.edit);
 
 //router.post("/profile-edit", usersController.edit)
 
-router.post("/update", usersController.update);
+router.post("/update", validations, usersController.update);
 
 module.exports = router;
 

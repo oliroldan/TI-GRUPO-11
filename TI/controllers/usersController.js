@@ -1,6 +1,8 @@
 /* crear el modulo en si */
 const db = require("../database/models");
 const bcrypt = require('bcryptjs')
+const{validationResult} = require("express-validator")
+
 
 const users = {
     index: function (req, res, next) {
@@ -68,39 +70,57 @@ const users = {
       //res.render('profile-edit', { usuario: datos.usuario, title: 'Editar' });
     },
     store: function(req, res) {
+
+      let errors = validationResult(req)
+      if (errors.isEmpty()) {
         let form = req.body;
         //return res.send(form)
         let usuario = {
           mail: form.mail,
-          contra: bcrypt.hashSync(form.contra, 10)
-          // nombre: varchar(250) 
-          // fecha:  
-          // dni:
-        }
-        
+          contra: bcrypt.hashSync(form.contra, 10),
+          nombre: form.nombre,
+          fecha: form.fecha,
+          dni: form.dni,
+          fotoPerfil: form.fotoPerfil
+        };
         db.Usuario.create(usuario)
-        .then((result) => {
+          .then((result) => {
             return res.redirect("/users/login")
         }).catch((err) => {
-          return console.log(err);
+            return console.log(err);
         })
+      } else {
+        //return res.send(errors.mapped())
+          return res.render("register", {
+            errors: errors.mapped(),
+            old: req.body
+        })
+      } 
     },
     update: function(req, res) {
-      let form = req.body
-      let filtrado = {
-        where: {
-          id: form.id
+      let errors = validationResult(req)
+      if (errors.isEmpty()){
+        let form = req.body
+        let filtrado = {
+          where: {
+            id: form.id
+          }
         }
+        //return res.send(form)
+        db.Usuario.update(form, filtrado)
+        .then(function(result) {
+          return res.send(result)
+          return res.redirect("/profile/id/" + form.id)
+        })
+        .catch(function(err) {
+          return console.log(err);
+        })
+      } else {
+        return res.render("profile-edit", {
+          errors: errors.mapped() ,
+          old: req.body
+        })
       }
-      //return res.send(form)
-
-      db.Usuario.update(form, filtrado)
-      .then(function(result) {
-        return res.redirect("/profile/id/" + form.id)
-      })
-      .catch(function(err) {
-        return console.log(err);
-      })
     },
     logout: (req, res) => {
       req.session.destroy();

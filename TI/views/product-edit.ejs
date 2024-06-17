@@ -20,20 +20,29 @@
 					</div>
 					<!-- Show the "ultimos" products -->
 					<h2 class="col-12">
-						<form action="/producto/edit/:idProducto" method="post">
+						<form action="/product/" method="post">
 							<div>
 								<input type="hidden" name="id" value="<%= productos.id %>">
 							</div>
 							<div>
 								<input id="imagen" type="file" name="fotoProducto" value="<%= productos.fotoProducto %>" placeholder="Imagen">
+								<% if (locals.errors && errors.fotoProducto) { %>
+									<p class = "error" > <%= errors.fotoProducto.msg %> </p>
+								<% } %>	
 							</div>
 							<br>
 							<div>
 								<input id="nombre" type="text" name="nombre" value="<%= productos.nombre %>" placeholder="Nombre del producto">
+								<% if (locals.errors && errors.nombre) { %>
+									<p class = "error" > <%= errors.nombre.msg %> </p>
+								<% } %>	
 							</div>
 							<br>
 							<div>
 								<input id="descripción" type="text" name="descripción" value="<%= productos.descripcion %>" placeholder="Descripción del producto">
+								<% if (locals.errors && errors.descripcion) { %>
+									<p class = "error" > <%= errors.descripcion.msg %> </p>
+								<% } %>	
 							</div>
 							<br>
 							<div>

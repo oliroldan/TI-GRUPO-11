@@ -28,6 +28,9 @@
 							<img src="<%= productos.fotoProducto %>" alt="" class="product-detail-img"> <!-- //PORQUE NO CARGA LA FOTO// -->
 							<p class="product-detail-description">
 								<%= productos.descripcion %>
+								<br>
+								Usuario que lo creo: <%= productos.usuario.nombre %>
+								</br>
 							</p>
 						</article>
 						<div class="col-12 col-lg-4">
@@ -50,11 +53,17 @@
 							<% if (locals.user != undefined) { %>
 								<form class="form" action="/product/comentario" method="post">
 									<input class="agregar comentario" type="text" name="comentario" placeholder="Agregar comentario">
+									<% if (locals.errors && errors.comentario) { %>
+										<p class = “error” > <%= errors.comentario.msg %> </p>
+									<% } %>									
 									<input type="hidden" name="idUsuario" value="<%= user.id  %>">
-									<input type="hidden" name="idProductos" value="<%= productos.id %>"> //cambiar por PRODUCTO singular
+									<input type="hidden" name="idProductos" value="<%= productos.id %>"> 
 									<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 								</form>
-							 <% } %>
+							<% } else { %> 
+								<h2>Para comentar debes estar logueado</h2>
+							<% } %>
+							  
 							
 							<hr>
 						</div>

@@ -23,12 +23,21 @@
 						<form method="post">
 							<div>
 								<input id="mail" type="email" name="mail" value="" placeholder="email">
+								<% if (locals.errors && errors.mail) { %>
+									<p class = "error" > <%= errors.mail.msg %> </p>
+								<% } %>	
 							</div>
 							<div>
 								<input id="nombre" type="text" name="nombre" value="" placeholder="usuario">
+								<% if (locals.errors && errors.nombre) { %>
+									<p class = "error" > <%= errors.nombre.msg %> </p>
+								<% } %>								
 							</div>
 							<div>
 								<input id="contra" type="password" name="contra" value="" placeholder="password">
+								<% if (locals.errors && errors.contra) { %>
+									<p class = "error" > <%= errors.contra.msg %> </p>
+								<% } %>	
 							</div>
 							<div>
 								<input id="fecha" type="date" name="fecha" value="" placeholder="fecha de nacimiento">
