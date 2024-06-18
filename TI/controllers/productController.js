@@ -105,7 +105,7 @@ const product = {
 
       db.Producto.findByPk(idProducto)
       .then(function (resultId) {
-        //res.send(resultId)
+        
         res.render('product-edit', {productos: resultId})
       })
       .catch(function (err) {
@@ -124,8 +124,8 @@ const product = {
         //return res.send(form)
         db.Producto.update(form, filtrado)
         .then(function(params) {
-          return res.send(params)
-          //return res.redirect("/product/id/" + form.id)
+          //return res.send(params)
+          return res.redirect("/product/detalle/" + form.idProducto)
         })
         .catch(function(err) {
           return console.log(err);

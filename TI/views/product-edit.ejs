@@ -5,7 +5,7 @@
 
 	<body>
 		<!-- Header -->
-		<% if (locals.users != undefined) { %>
+		<% if (locals.user != undefined) { %>
 			<%- include('./partials/headerLogueado') %>
 		 <% } else { %>
 			<%- include('./partials/header') %>
@@ -20,9 +20,12 @@
 					</div>
 					<!-- Show the "ultimos" products -->
 					<h2 class="col-12">
-						<form action="/product/" method="post">
+						<form action="/product/update" method="post">
 							<div>
 								<input type="hidden" name="id" value="<%= productos.id %>">
+							</div>
+							<div>
+								
 							</div>
 							<div>
 								<input id="imagen" type="file" name="fotoProducto" value="<%= productos.fotoProducto %>" placeholder="Imagen">

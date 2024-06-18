@@ -6,6 +6,12 @@ const{validationResult} = require("express-validator")
 
 const users = {
     index: function (req, res, next) {
+      let criterio = {
+        include: [
+          {association: "producto"},
+          {association: "comentario"}
+        ]
+    }
       db.Usuario.findAll()
       .then(function (respuesta) {
        // return res.send(respuesta)
@@ -15,11 +21,17 @@ const users = {
       .catch(function (error) {
         return console.log(error)
       });  
+
+      db.Producto.findOne(criterio)
+      .then(function (respuesta2) {
+         //return res.send(respuesta)
+         res.render('profile', { productos: respuesta2, title: 'Profile' });
+         
+       })
+       .catch(function (err) {
+         return console.log(err)
+       });
     },
-    /* index: function (result) {
-      return res.send(result)
-      res.render('profile', { usuario: datos.usuario, productos: datos.productos, title: 'Profile' });
-    }, */
     register: function (req, res, next) {
         res.render('register', { title: 'Registrarse' });
     },
@@ -66,8 +78,6 @@ const users = {
       .catch(function (err) {
         return console.log(err);
       })
-
-      //res.render('profile-edit', { usuario: datos.usuario, title: 'Editar' });
     },
     store: function(req, res) {
 
