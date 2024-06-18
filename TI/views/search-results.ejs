@@ -5,7 +5,7 @@
 
 	<body>
 		<!-- Header -->
-		<% if (locals.users != undefined) { %>
+		<% if (locals.user != undefined) { %>
 			<%- include('./partials/headerLogueado') %>
 		 <% } else { %>
 			<%- include('./partials/header') %>
@@ -39,7 +39,7 @@
 													<%= listado[i].descripcion %>
 												</p> 
 												<p>
-													 
+													<%=listado[i].nombre %>
 												</p>
 											</article>
 										</a>

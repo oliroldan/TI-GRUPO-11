@@ -3,7 +3,6 @@ const db = require("../database/models");
 const bcrypt = require('bcryptjs')
 const{validationResult} = require("express-validator")
 
-
 const users = {
     index: function (req, res, next) {
       let criterio = {
@@ -12,7 +11,7 @@ const users = {
           {association: "comentario"}
         ]
     }
-      db.Usuario.findAll()
+      db.Usuario.findAll() //va este
       .then(function (respuesta) {
        // return res.send(respuesta)
         res.render('profile', { usuario: respuesta, title: 'Profile' });
@@ -22,7 +21,7 @@ const users = {
         return console.log(error)
       });  
 
-      db.Producto.findOne(criterio)
+      db.Producto.findOne(criterio) //o este
       .then(function (respuesta2) {
          //return res.send(respuesta)
          res.render('profile', { productos: respuesta2, title: 'Profile' });

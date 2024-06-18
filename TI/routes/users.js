@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const db = require("../database/models")
 
 /* requerir el modelo del controlador */
 const usersController = require('../controllers/usersController')
@@ -11,13 +12,21 @@ const validations = [
   body("mail")
     .notEmpty().withMessage("debes ingresar un mail").bail()
     .isEmail().withMessage("este mail pertenece a otro usuario").bail(),
-    
+    /* .custom(function(mail, {req}) {
+      db.Usuario.findOne({
+        where: {mail: req.body.mail}
+      })
+      .then(function(user) {
+        if(user){
+          throw new Error("El mail igresado ya existe")
+        }
+      })
+    }) */
 
   body("contra")
     .notEmpty().withMessage("debes completar la password").bail()
     .isLength({min: 4}).withMessage("la contra debe ser mas larga")
 ]
-
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {

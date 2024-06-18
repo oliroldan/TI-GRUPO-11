@@ -10,7 +10,6 @@ const product = {
       .then(function (respuesta) {
         return res.render('product', {productos: respuesta , title: 'Products' })
       })
-      //datos.productos[4] ??
       .catch(function (error) {
         return console.log(error)
       });  
@@ -53,7 +52,6 @@ const product = {
       db.Producto.findByPk(productoBuscado)
       .then(function(resultado) {
         return res.render("Productos", {listado : resultado});
-        //return res.render("Productos", {listado : datos.filtrarProductos(productoBuscado)})
         //return res.send(resultado)
       })
       .catch(function(err){
