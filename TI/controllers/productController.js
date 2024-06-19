@@ -79,15 +79,15 @@ const product = {
     },
     store: function(req, res) {
       let errors = validationResult(req)
-
+      
       if (errors.isEmpty()){
         let form = req.body;
-
-        return res.send(form)
+        console.log(form)
+       // return res.send(form)
   
         db.Producto.create(form)
         .then((result) => {
-          return res.redirect("/product" )
+          return res.redirect("/product/detalle/" + result.id)
         }).catch((err) => {
           return console.log(err);
         })

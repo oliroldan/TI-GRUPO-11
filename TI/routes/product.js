@@ -12,8 +12,10 @@ const validations = [
     .notEmpty().withMessage("debes ingresar una descripcion del producto").bail(),
 
   body("fotoProducto")
-    .notEmpty().withMessage("debes ingresar la ruta a la foto").bail(),
+    .notEmpty().withMessage("debes ingresar la ruta a la foto").bail()
+]
 
+const  validationsComment = [
   body("comentario")
     .notEmpty().withMessage("debes ingresar un comentario").bail()
     .isLength({min:3}).withMessage("el comentario debe ser mas largo")
@@ -36,6 +38,6 @@ router.post("/update", validations, productController.update);
 
 router.post("/delete", productController.delete);
 
-router.post("/comentario", validations, productController.addComment);
+router.post("/comentario", validationsComment, productController.addComment);
 
 module.exports = router;

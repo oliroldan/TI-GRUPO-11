@@ -7,29 +7,20 @@ const users = {
     index: function (req, res, next) {
       let criterio = {
         include: [
-          {association: "producto"},
-          {association: "comentario"}
-        ]
+          {association: "producto"}
+        ],
+        where:{
+          id: req.session.user.id
+        }  
     }
-      db.Usuario.findAll() //va este
-      .then(function (respuesta) {
-       // return res.send(respuesta)
-        res.render('profile', { usuario: respuesta, title: 'Profile' });
-        
-      })
-      .catch(function (error) {
-        return console.log(error)
-      });  
-
-      db.Producto.findOne(criterio) //o este
-      .then(function (respuesta2) {
-         //return res.send(respuesta)
-         res.render('profile', { productos: respuesta2, title: 'Profile' });
-         
-       })
-       .catch(function (err) {
-         return console.log(err)
-       });
+    db.Usuario.findAll(criterio) //va este
+    .then(function (respuesta) {
+      // return res.send(respuesta)
+      res.render('profile', { usuario: respuesta[0], productos: respuesta[0].producto, title: 'Profile' });
+    })
+    .catch(function (error) {
+      return console.log(error)
+    });  
     },
     register: function (req, res, next) {
         res.render('register', { title: 'Registrarse' });
