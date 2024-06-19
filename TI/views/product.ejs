@@ -11,7 +11,7 @@
 			<%- include('./partials/header') %>
 		<% } %>
 		<!-- /Header -->
-
+			
 			<!-- product detail -->
 			<div class="container products-wrapper">
 				<div class="d-flex align-items-center">
@@ -37,11 +37,21 @@
 							<section class="comments">
 								<% for( let i=0; i < productos.comentario.length; i++ ) { %>
 									<article>
-										<img src="<%= productos.usuario.fotoPerfil %>" alt="">  
+										<% if (locals.user != undefined) { %>
+											<img src="<%= user.fotoPerfil %>" alt="">  
+										<% } else { %>
+											<img src="<%= productos.usuario.fotoPerfil %>" alt=""> 
+										<% } %> 
+										
 										<div class="data">
 											<p class="user">
 												<strong> <a href="/users/profile"></a>
-												<%= productos.usuario.nombre %> 
+												<% if (locals.user != undefined) { %>
+													<%= user.nombre %> 
+												<% } else { %>
+													<%= productos.usuario.nombre %>
+												<% } %> 
+												
 												</strong>
 												<%= productos.comentario[i].comentario %> 
 											</p>
@@ -56,6 +66,7 @@
 									<% if (locals.errors && errors.comentario) { %>
 										<p class = “error” > <%= errors.comentario.msg %> </p>
 									<% } %>									
+									<%console.log(user.id)%>
 									<input type="hidden" name="idUsuario" value="<%= user.id  %>">
 									<input type="hidden" name="idProductos" value="<%= productos.id %>"> 
 									<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>

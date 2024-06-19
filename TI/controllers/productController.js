@@ -156,6 +156,7 @@ const product = {
 
       if (errors.isEmpty()){
         let form = req.body;
+        //console.log(form)
         let orden = {
           order: [
             ["createdAt", "DESC"]
@@ -164,7 +165,7 @@ const product = {
         db.Comentario.create(form, orden)
         .then(function(result) {
           //return res.send(result)
-          return res.redirect("/product/detalle/" + form.idProducto)
+          return res.redirect("/product/detalle/" + form.idProductos)
         })
         .catch(function(err) {
           return res.send(err)
