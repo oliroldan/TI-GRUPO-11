@@ -171,7 +171,7 @@ const product = {
           return res.send(err)
         })
       } else {
-        return res.render("product", {
+        return res.render("product-add", {
           errors: errors.mapped(),
           old: req.body
       })

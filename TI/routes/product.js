@@ -15,7 +15,7 @@ const validations = [
     .notEmpty().withMessage("debes ingresar la ruta a la foto").bail()
 ]
 
-const  validationsComment = [
+const validationsComment = [
   body("comentario")
     .notEmpty().withMessage("debes ingresar un comentario").bail()
     .isLength({min:3}).withMessage("el comentario debe ser mas largo")
