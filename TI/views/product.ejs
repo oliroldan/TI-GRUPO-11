@@ -66,9 +66,10 @@
 									<% if (locals.errors && errors.comentario) { %>
 										<p class = “error” > <%= errors.comentario.msg %> </p>
 									<% } %>									
-									<%console.log(user.id)%>
+									
 									<input type="hidden" name="idUsuario" value="<%= user.id  %>">
 									<input type="hidden" name="idProductos" value="<%= productos.id %>"> 
+									
 									<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 								</form>
 							<% } else { %> 

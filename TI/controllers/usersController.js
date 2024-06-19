@@ -13,7 +13,7 @@ const users = {
           id: req.session.user.id
         }  
     }
-    db.Usuario.findAll(criterio) //va este
+    db.Usuario.findAll(criterio)
     .then(function (respuesta) {
       // return res.send(respuesta)
       res.render('profile', { usuario: respuesta[0], productos: respuesta[0].producto, title: 'Profile' });

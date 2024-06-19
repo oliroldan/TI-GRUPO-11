@@ -51,8 +51,8 @@ const product = {
       
       db.Producto.findByPk(productoBuscado)
       .then(function(resultado) {
+        //res.send(resultado)
         return res.render("Productos", {listado : resultado});
-        //return res.send(resultado)
       })
       .catch(function(err){
         return console.log(err);
