@@ -115,6 +115,7 @@ const product = {
       })
     },
     update: function(req, res) {
+      //res.send(req.body)
       let errors = validationResult(req)
       if (errors.isEmpty()){
         let form = req.body
@@ -127,7 +128,7 @@ const product = {
         db.Producto.update(form, filtrado)
         .then(function(params) {
           //return res.send(params)
-          return res.redirect("/product/detalle/" + form.idProducto)
+          return res.redirect("/product/detalle/" + form.idProductos)
         })
         .catch(function(err) {
           return console.log(err);
@@ -160,7 +161,7 @@ const product = {
 
       if (errors.isEmpty()){
         let form = req.body;
-        console.log(form)
+        //console.log(form)
         let orden = {
           order: [
             ["createdAt", "DESC"]
@@ -176,7 +177,7 @@ const product = {
           return res.send(err)
         })
       } else {
-        return res.render("product-add", {
+        return res.render("product", {
           errors: errors.mapped(),
           old: req.body
       })

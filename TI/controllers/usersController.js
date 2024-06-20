@@ -109,8 +109,8 @@ const users = {
         //return res.send(form)
         db.Usuario.update(form, filtrado)
         .then(function(result) {
-          return res.send(result)
-          return res.redirect("/profile/id/" + form.id)
+          //return res.send(result)
+          return res.redirect("/users/profile")
         })
         .catch(function(err) {
           return console.log(err);
