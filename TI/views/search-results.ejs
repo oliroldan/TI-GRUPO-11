@@ -39,7 +39,7 @@
 													<%= listado[i].descripcion %>
 												</p> 
 												<p>
-													Agregado por: <%=listado[i].idUsuario %>
+													Agregado por: <%=listado[i].usuario.nombre %>
 												</p>
 											</article>
 										</a>
@@ -48,10 +48,6 @@
 		
 								<% } %>
 							<% } %> 
-
-						
-						 
-					
 
 					<!-- footer -->
 					<%- include('./partials/footer') %>

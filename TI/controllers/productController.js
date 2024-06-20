@@ -3,11 +3,11 @@ const db = require("../database/models")
 const op = db.Sequelize.Op
 const{validationResult} = require("express-validator")
 
-
 const product = {
     index: function (req, res, next) {
       db.Producto.findAll()
       .then(function (respuesta) {
+        //return res.send(respuesta)
         return res.render('product', {productos: respuesta , title: 'Products' })
       })
       .catch(function (error) {
@@ -32,6 +32,10 @@ const product = {
         },
         order: [
           ["createdAt", "DESC"]
+        ],
+        include: [
+          {association: "usuario"},
+          {association: "comentario"}
         ]
       }
       //return res.send(productoBuscado)
@@ -156,7 +160,7 @@ const product = {
 
       if (errors.isEmpty()){
         let form = req.body;
-        //console.log(form)
+        console.log(form)
         let orden = {
           order: [
             ["createdAt", "DESC"]
@@ -165,6 +169,7 @@ const product = {
         db.Comentario.create(form, orden)
         .then(function(result) {
           //return res.send(result)
+          //console.log(result);
           return res.redirect("/product/detalle/" + form.idProductos)
         })
         .catch(function(err) {
