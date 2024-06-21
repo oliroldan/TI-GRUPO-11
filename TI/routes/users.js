@@ -11,17 +11,17 @@ const validations = [
 
   body("mail")
     .notEmpty().withMessage("debes ingresar un mail").bail()
-    .isEmail().withMessage("este mail pertenece a otro usuario").bail(),
-    /* .custom(function(mail, {req}) {
-      db.Usuario.findOne({
-        where: {mail: req.body.mail}
+    .isEmail().withMessage("Debe ingresar un mail valido").bail()
+    .custom(function(value, {req}){
+      return db.Usuario.findOne({
+          where: {mail: value}
       })
-      .then(function(user) {
-        if(user){
-          throw new Error("El mail igresado ya existe")
-        }
+      .then(function(user){
+          if(user){
+              throw new Error("Ya existe un usuario con ese mail")
+          }
       })
-    }) */
+    }),
 
   body("contra")
     .notEmpty().withMessage("debes completar la password").bail()

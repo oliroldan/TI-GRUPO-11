@@ -142,15 +142,16 @@ const product = {
     },
     delete: function (req, res) {
       let form = req.body;
+      //return res.send(form)
       let filtrado = {
         where: {
-          id: form.id
+          id: form.idProductos
         }
       }
-      //return res.send(form.id);
+      //return res.send(form.idProductos);
       db.Producto.destroy(filtrado)
       .then(function (params) {
-        return res.redirect("/product/")
+        return res.redirect("/")
       })
       .catch(function (err) {
         return console.log(err);
@@ -170,7 +171,7 @@ const product = {
         db.Comentario.create(form, orden)
         .then(function(result) {
           //return res.send(result)
-          //console.log(result);
+          console.log(result);
           return res.redirect("/product/detalle/" + form.idProductos)
         })
         .catch(function(err) {
