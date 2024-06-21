@@ -28,7 +28,7 @@
 								
 							</div>
 							<div>
-								<input id="imagen" type="file" name="fotoProducto" value="<%= productos.fotoProducto %>" placeholder="Imagen">
+								<input id="imagen" type="text" name="fotoProducto" value="<%= productos.fotoProducto %>" placeholder="Nombre del archivo">
 								<% if (locals.errors && errors.fotoProducto) { %>
 									<p class = "error" > <%= errors.fotoProducto.msg %> </p>
 								<% } %>	
