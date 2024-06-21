@@ -31,7 +31,7 @@
 				<div class="product-detail">
 					<div class="row">
 						<article class="col-12 col-lg-8 product-detail-info">
-							<img src="<%= productos.fotoProducto %>" alt="" class="product-detail-img"> <!-- //PORQUE NO CARGA LA FOTO// -->
+							<img src="/fotosProductos/<%= productos.fotoProducto %>" alt="" class="product-detail-img"> <!-- //PORQUE NO CARGA LA FOTO// -->
 							<p class="product-detail-description">
 								<%= productos.descripcion %>
 								<br>
@@ -44,9 +44,9 @@
 								<% for( let i=0; i < productos.comentario.length; i++ ) { %>
 									<article>
 										<% if (locals.user != undefined) { %>
-											<img src="<%= user.fotoPerfil %>" alt="">  
+											<img src="/fotosPerfil/<%= user.fotoPerfil %>" alt="">  
 										<% } else { %>
-											<img src="<%= productos.usuario.fotoPerfil %>" alt=""> 
+											<img src="/fotosPerfil/<%= productos.usuario.fotoPerfil %>" alt=""> 
 										<% } %> 
 										
 										<div class="data">

@@ -16,14 +16,14 @@
 			<section class="info-usuario container products-wrapper">
 				<div class="row">
 					<div class="img-container offset-3 col-2">
-						<img src="<%= usuario.fotoPerfil %>" alt="foto de perfil" class="foto-perfil">
+						<img src="/fotosPerfil/<%= usuario.fotoPerfil %>" alt="foto de perfil" class="foto-perfil">
 					</div>
 
 					<div class="data-container col-6">
 						<div class="d-flex align-items-center ">
 							<h2 class="main-title">
 								    <%= usuario.nombre %>  
-									<a href="/users/profile-edit">
+									<a href="/users/profile-edit/<%=usuario.id%>">
 										<i class="fas fa-cog"></i>
 									</a>
 							</h2>
@@ -32,14 +32,18 @@
 						<div>
 							<ul class="">
 								<%= usuario.mail %>
-								<li>Cantidad de productos cargados por <%= usuario.nombre %>: <%= productos.length %></li>
-								<li>200 seguidores</li>
-								<li>300 comentarios</li>
+								<br>
+								<br>
+								<li>✦ Cantidad de productos cargados por <%= usuario.nombre %>: <%= productos.length %></li>
+								<br>
+								<li>✦ 200 seguidores</li>
+								<br>
+								<li>✦ 300 comentarios</li>
+								<br>
 							</ul>
 						</div>
 						<ul>
 							<li>
-								<% console.log(usuario.id) %>
 								<a href="/users/profile-edit/<%=usuario.id%>"> Edita tu perfil <i class="fas fa-sign-in-alt"></i></a>
 							</li>
 						</ul>
@@ -55,13 +59,12 @@
 						<h2 class="products-title">Mis productos</h2>
 					</div>
 					<!-- Show mis productos -->
-					<% console.log(productos) %>
 					<% for( let i=0; i < productos.length ; i++ ) { %>
 						<div class="col-12 col-sm-6 col-lg-3">
 							<section class="product-box">
 								<a href="/product/detalle/<%=productos[i].id%>">
 									<figure class="product-box_image">
-										<img src="<%= productos[i].fotoProducto %>" alt="">
+										<img src="/fotosProductos/<%= productos[i].fotoProducto %>" alt="">
 									</figure>
 									<article class="product-box_data">
 										<h2>
@@ -71,7 +74,7 @@
 											<%= productos[i].descripcion%>
 										</p>
 										<p>
-											<%= productos.comentarios%> 
+											Comentarios: <%= productos[i].comentario%>
 										</p>
 									</article>
 								</a>

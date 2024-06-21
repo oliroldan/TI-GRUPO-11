@@ -7,7 +7,8 @@ const users = {
     index: function (req, res, next) {
       let criterio = {
         include: [
-          {association: "producto"}
+          {association: "producto"},
+          {association: "comentario"}
         ],
         where:{
           id: req.session.user.id
@@ -15,7 +16,7 @@ const users = {
     }
     db.Usuario.findAll(criterio)
     .then(function (respuesta) {
-      // return res.send(respuesta)
+      //return res.send(respuesta)
       res.render('profile', { usuario: respuesta[0], productos: respuesta[0].producto, title: 'Profile' });
     })
     .catch(function (error) {
@@ -26,7 +27,8 @@ const users = {
       let idUsuario = req.params.id
       let criterio = {
         include: [
-          {association: "producto"}
+          {association: "producto"},
+          {association: "comentario"}
         ]}
 
       db.Usuario.findByPk(idUsuario, criterio)

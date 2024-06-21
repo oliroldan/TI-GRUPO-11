@@ -22,7 +22,7 @@
 					<h2 class="col-12">
 						<form action="/product/productAdd" method="post">
 							<div>
-								<input id="fotoProducto" type="text" name="fotoProducto"  placeholder="Imagen" >
+								<input id="fotoProducto" type="text" name="fotoProducto"  placeholder="Nombre del Archivo" >
 								<% if (locals.errors && errors.fotoProducto) { %>
 									<p class = "error" > <%= errors.fotoProducto.msg %> </p>
 								<% } %>	

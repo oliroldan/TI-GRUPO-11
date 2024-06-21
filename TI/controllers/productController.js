@@ -75,6 +75,7 @@ const product = {
 
       db.Producto.findByPk(idProducto, criterio)
       .then((result) => {
+        //return res.send(result)
         return res.render("product", {productos: result});
       }).catch((error) => {
         return console.log(error);
