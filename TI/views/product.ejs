@@ -35,7 +35,7 @@
 							<p class="product-detail-description">
 								<%= productos.descripcion %>
 								<br>
-								Usuario que lo creo: <%= productos.usuario.nombre %>
+								Usuario que lo creo: <a href="/users/profile/<%= productos.usuario.id %>"><%= productos.usuario.nombre %></a>
 								</br>
 							</p>
 						</article>
@@ -51,9 +51,9 @@
 										
 										<div class="data">
 											<p class="user">
-												<strong> <a href="/users/profile"></a>
+												<strong> 
 												<% if (locals.user != undefined) { %>
-													<%= user.nombre %> 
+													<a href="/users/profile/<%= productos.usuario.id %>"><%= productos.usuario.nombre %></a>
 												<% } else { %>
 													<%= productos.usuario.nombre %>
 												<% } %> 

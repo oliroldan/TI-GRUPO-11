@@ -35,6 +35,8 @@ router.get('/', function (req, res, next) {
 
 router.get('/profile', usersController.index);
 
+router.get('/profile/:id', usersController.perfilUser);
+
 /* LOGIN mostrar formulario */
 router.get('/login', usersController.login);
 

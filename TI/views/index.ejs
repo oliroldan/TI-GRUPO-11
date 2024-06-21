@@ -40,9 +40,11 @@
 											<%= productos[i].descripcion %>
 										</p> 
 										<p>
-											 Comentarios: <%= productos[i].comentario.length %>
+											Comentarios: <%= productos[i].comentario.length %>
 										</p>
-										
+										<p>
+											Agregado por: <a href="/users/profile/<%= productos[i].idUsuario %>"><%= productos[i].usuario.nombre %></a>
+									   </p>
 									</article>
 								</a>
 							</section>

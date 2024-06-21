@@ -11,7 +11,7 @@ const users = {
         ],
         where:{
           id: req.session.user.id
-        }  
+        }
     }
     db.Usuario.findAll(criterio)
     .then(function (respuesta) {
@@ -21,6 +21,22 @@ const users = {
     .catch(function (error) {
       return console.log(error)
     });  
+    },
+    perfilUser: function(req, res, next) {
+      let idUsuario = req.params.id
+      let criterio = {
+        include: [
+          {association: "producto"}
+        ]}
+
+      db.Usuario.findByPk(idUsuario, criterio)
+      .then(function (respuesta) {
+        //return res.send(respuesta)
+        res.render('profile', { usuario: respuesta, productos: respuesta.producto, title: 'Profile' });
+      })
+      .catch(function (error) {
+        return console.log(error)
+      });  
     },
     register: function (req, res, next) {
         res.render('register', { title: 'Registrarse' });

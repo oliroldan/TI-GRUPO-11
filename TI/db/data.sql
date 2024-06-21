@@ -40,7 +40,7 @@ CREATE TABLE comentarios (
 );
 
 -- datos de 5 usuarios
-INSERT INTO usuarios VALUES (DEFAULT, 'mora', 'mora1234@gmail.com', '****', '2023-10-29', 46738291, '/fotosPerfil/foto1.avif', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO usuarios VALUES (DEFAULT, 'mora', 'mora1234@gmail.com', '****', '2023-10-29', 46738291, '/fotosPerfil/foto1.jpg', DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO usuarios VALUES (DEFAULT, 'luz', 'luz1234@gmail.com', '****', '2022-08-11', 44388920, '/fotosPerfil/foto2.jpeg', DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO usuarios VALUES (DEFAULT, 'sol', 'sol1234@gmail.com', '****', '2023-12-10', 39637191, '/fotosPerfil/foto3.avif', DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO usuarios VALUES (DEFAULT, 'maia', 'maia1234@gmail.com', '****', '2020-10-21', 41134256, '/fotosPerfil/foto4.webp', DEFAULT, DEFAULT, DEFAULT);
