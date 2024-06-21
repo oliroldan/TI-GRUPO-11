@@ -6,6 +6,10 @@ const index = {
     let filtrado = {
       order: [
         ["createdAt", "DESC"]
+      ],
+      include: [
+        {association: "usuario"},
+        {association: "comentario"}
       ]
     }
     db.Producto.findAll(filtrado)

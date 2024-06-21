@@ -7,7 +7,6 @@ const product = {
     index: function (req, res, next) {
       db.Producto.findAll()
       .then(function (respuesta) {
-        //return res.send(respuesta)
         return res.render('product', {productos: respuesta , title: 'Products' })
       })
       .catch(function (error) {
