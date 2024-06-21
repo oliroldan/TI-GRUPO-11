@@ -43,8 +43,12 @@
 							</ul>
 						</div>
 						<ul>
-							<li>
-								<a href="/users/profile-edit/<%=usuario.id%>"> Edita tu perfil <i class="fas fa-sign-in-alt"></i></a>
+							<li><% if (locals.user != undefined) { %>
+									<a href="/users/profile-edit/<%=usuario.id%>"> Edita tu perfil <i class="fas fa-sign-in-alt"></i></a>
+								<% } else { %>
+									<p>Para editar un perfil debes loguearte</p>
+								<% } %>
+								
 							</li>
 						</ul>
 					</div>
