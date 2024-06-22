@@ -3,10 +3,10 @@ var router = express.Router();
 
 /* requerir el modelo del controlador */
 const productController = require('../controllers/productController')
-const{body} = require("express-validator")
+const { body } = require("express-validator")
 const validations = [
   body("nombre")
-	.notEmpty().withMessage("debes ingresar un nombre").bail(),
+    .notEmpty().withMessage("debes ingresar un nombre").bail(),
 
   body("descripcion")
     .notEmpty().withMessage("debes ingresar una descripcion del producto").bail(),
@@ -18,10 +18,9 @@ const validations = [
 const validationsComment = [
   body("comentario")
     .notEmpty().withMessage("debes ingresar un comentario").bail()
-    .isLength({min:3}).withMessage("el comentario debe ser mas largo")
+    .isLength({ min: 3 }).withMessage("el comentario debe ser mas largo")
 ]
 
-// GET todos los productos
 router.get('/', productController.index);
 
 router.get('/detalle/:id', productController.detalle);

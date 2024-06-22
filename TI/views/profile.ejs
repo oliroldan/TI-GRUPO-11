@@ -43,12 +43,15 @@
 							</ul>
 						</div>
 						<ul>
-							<li><% if (locals.user != undefined) { %>
-									<a href="/users/profile-edit/<%=usuario.id%>"> Edita tu perfil <i class="fas fa-sign-in-alt"></i></a>
-								<% } else { %>
-									<p>Para editar un perfil debes loguearte</p>
+							<li>
+								<% if (locals.user != undefined) { %>
+									<% if (locals.user.id == usuario.id) { %>
+										<a href="/users/profile-edit/<%=usuario.id%>"> Edita tu perfil <i class="fas fa-sign-in-alt"></i></a>
+									<% } else {%>
+										<p>No podes editar este perfil</p>
+										<% } %>
+									
 								<% } %>
-								
 							</li>
 						</ul>
 					</div>
@@ -89,7 +92,6 @@
 			</div>
 			</div>
 			<!-- /Mis productos -->
-
 
 			<!-- footer -->
 			<%- include('./partials/footer') %>

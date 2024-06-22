@@ -8,8 +8,8 @@ const index = {
         ["createdAt", "DESC"]
       ],
       include: [
-        {association: "usuario"},
-        {association: "comentario"}
+        { association: "usuario" },
+        { association: "comentario" }
       ]
     }
     db.Producto.findAll(filtrado)

@@ -41,16 +41,16 @@ module.exports = function (sequelize, dataTypes) {
     };
 
     let Usuario = sequelize.define(alias, cols, config);
-    
-    Usuario.associate = function(models) {
+
+    Usuario.associate = function (models) {
         Usuario.hasMany(models.Comentario, {
             as: "comentario", // alias: como voy a llamar a esa relacion
             foreignKey: "idUsuario" // foreignKey que relaciona ambas tablas 
         }),
-        Usuario.hasMany(models.Producto, {
-            as: "producto", // alias: como voy a llamar a esa relacion
-            foreignKey: "idUsuario" // foreignKey que relaciona ambas tablas 
-        })
+            Usuario.hasMany(models.Producto, {
+                as: "producto", // alias: como voy a llamar a esa relacion
+                foreignKey: "idUsuario" // foreignKey que relaciona ambas tablas 
+            })
     }
     return Usuario;
 }

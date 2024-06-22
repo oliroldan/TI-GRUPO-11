@@ -33,15 +33,15 @@ module.exports = function (sequelize, dataTypes) {
 
     let Comentario = sequelize.define(alias, cols, config);
 
-    Comentario.associate = function(models) {
+    Comentario.associate = function (models) {
         Comentario.belongsTo(models.Usuario, {
             as: "usuario", // alias: como voy a llamar a esa relacion
             foreignKey: "idUsuario" // foreignKey que relaciona ambas tablas
         }),
-        Comentario.belongsTo(models.Producto, {
-            as: "producto", // alias: como voy a llamar a esa relacion
-            foreignKey: "idProductos" // foreignKey que relaciona ambas tablas 
-        })    
+            Comentario.belongsTo(models.Producto, {
+                as: "producto", // alias: como voy a llamar a esa relacion
+                foreignKey: "idProductos" // foreignKey que relaciona ambas tablas 
+            })
     };
 
     return Comentario;
