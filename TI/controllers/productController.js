@@ -68,11 +68,15 @@ const product = {
     let criterio = {
       include: [
         { association: "usuario" },
-        { association: "comentario", include: [{ association: "usuario" }],
-          order: [
-            ["createdAt", "DESC"]
-          ]}]
-    }
+        { 
+          association: "comentario", 
+          include: [{ association: "usuario" }]
+        }
+      ],
+      order: [
+        [{ model: db.Comentario, as: 'comentario' }, 'createdAt', 'DESC']
+      ]
+    };
 
     db.Producto.findByPk(idProducto, criterio)
       .then((result) => {
@@ -146,11 +150,20 @@ const product = {
     //return res.send(form)
     let filtrado = {
       where: {
-        id: form.idProductos
-      }
+        idProductos: form.idProductos
+      },
+      include: [
+        { association: "usuario" },
+        { association: "producto" }
+      ]
     }
-
-    db.Producto.destroy(filtrado)
+    
+    db.Comentario.destroy(filtrado)
+      .then(function () {
+        return db.Producto.destroy(
+          {where: {id: form.idProductos}}
+        )
+      })
       .then(function (params) {
         return res.redirect("/")
       })
