@@ -13,14 +13,18 @@ const validations = [
     .notEmpty().withMessage("Debes ingresar un mail").bail()
     .isEmail().withMessage("Debes ingresar un mail valido").bail()
     .custom(function (value, { req }) {
-      return db.Usuario.findOne({
-        where: { mail: value }
-      })
+      if (value == req.session.user.mail) { // no deja que se cree otro mail
+        return true
+      }else{
+        return db.Usuario.findOne({
+          where: { mail: value }
+        })
         .then(function (user) {
           if (user) {
-            throw new Error("Ya existe un usuario con ese mail")
+            throw new Error("Ya existe un usuario con ese mail") // y no tira este error
           }
         })
+      }
     }),
 
   body("contra")
@@ -83,6 +87,6 @@ router.get('/profile-edit/:idPerfil', usersController.edit);
 
 //router.post("/profile-edit", usersController.edit)
 
-router.post("/update", usersController.update);
+router.post("/update", validations, usersController.update);
 
 module.exports = router;

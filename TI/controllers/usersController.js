@@ -111,12 +111,12 @@ const users = {
     } else {
       return res.render("profile-edit", {
         errors: errors.mapped(),
-        old: req.body
+        perfil: req.body
       })
     }
   },
   store: function (req, res) {
-
+    
     let errors = validationResult(req)
     if (errors.isEmpty()) {
       let form = req.body;
