@@ -5,6 +5,7 @@ const db = require("../database/models")
 /* requerir el modelo del controlador */
 const usersController = require('../controllers/usersController')
 const { body } = require("express-validator")
+
 const validations = [
   body("nombre")
     .notEmpty().withMessage("Debes ingresar un nombre").bail(),
@@ -13,50 +14,49 @@ const validations = [
     .notEmpty().withMessage("Debes ingresar un mail").bail()
     .isEmail().withMessage("Debes ingresar un mail valido").bail()
     .custom(function (value, { req }) {
-      if (value == req.session.user.mail) { // no deja que se cree otro mail
-        return true
-      }else{
         return db.Usuario.findOne({
           where: { mail: value }
         })
-        .then(function (user) {
-          if (user) {
-            throw new Error("Ya existe un usuario con ese mail") // y no tira este error
-          }
-        })
+          .then(function (user) {
+            if (user) {
+              throw new Error("Ya existe un usuario con ese mail")
+            }
+          })
       }
-    }),
+    ),
 
   body("contra")
     .notEmpty().withMessage("Debes completar la password").bail()
     .isLength({ min: 4 }).withMessage("La contra debe ser mas larga")
 ]
 
-/* const validationsEditUser = [
+const validationsEditUser = [
   body("nombre")
     .notEmpty().withMessage("Debes ingresar un nombre").bail(),
 
   body("mail")
     .notEmpty().withMessage("Debes ingresar un mail").bail()
     .isEmail().withMessage("Debes ingresar un mail valido").bail()
-    .custom(function(value, {req}){
+    .custom(function (value, { req }) {
       console.log(value, req.session.user.mail, value != req.session.user.mail);
-      if (value != req.session.user.mail){
+      if (value == req.session.user.mail) {
+        return true
+      } else {
         return db.Usuario.findOne({
-          where: {mail: value}
+          where: { mail: value }
         })
-        .then(function(user){
-            if(user){
-                throw new Error("Ya existe un usuario con ese mail")
+          .then(function (user) {
+            if (user) {
+              throw new Error("Ya existe un usuario con ese mail")
             }
-        })
+          })
       }
     }),
 
   body("contra")
     .notEmpty().withMessage("debes completar la password").bail()
-    .isLength({min: 4}).withMessage("la contra debe ser mas larga")
-] */
+    .isLength({ min: 4 }).withMessage("la contra debe ser mas larga")
+]
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -87,6 +87,6 @@ router.get('/profile-edit/:idPerfil', usersController.edit);
 
 //router.post("/profile-edit", usersController.edit)
 
-router.post("/update", validations, usersController.update);
+router.post("/update", validationsEditUser, usersController.update);
 
 module.exports = router;

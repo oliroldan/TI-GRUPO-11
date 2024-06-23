@@ -68,8 +68,7 @@ const product = {
     let criterio = {
       include: [
         { association: "usuario" },
-        { 
-          association: "comentario", 
+        { association: "comentario", 
           include: [{ association: "usuario" }]
         }
       ],
@@ -80,8 +79,11 @@ const product = {
 
     db.Producto.findByPk(idProducto, criterio)
       .then((result) => {
-        //return res.send(result)
-        return res.render("product", { productos: result });
+        let errors = {}
+        if (req.session.commentFail != undefined && req.session.commentFail != null) {
+          errors = req.session.commentFail
+        }
+        return res.render("product", { productos: result, errors: errors });
       }).catch((error) => {
         return console.log(error);
       });
@@ -175,7 +177,7 @@ const product = {
     let errors = validationResult(req)
     let form = req.body;
     if (errors.isEmpty()) {
-
+      req.session.commentFail = null
       db.Comentario.create(form)
         .then(function (result) {
           return res.redirect("/product/detalle/" + form.idProductos)
@@ -184,6 +186,7 @@ const product = {
           return res.send(err)
         })
     } else {
+      req.session.commentFail = errors.mapped()
       return res.redirect("/product/detalle/" + form.idProductos)
     }
   }
