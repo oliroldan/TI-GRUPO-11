@@ -39,7 +39,7 @@
 													<%= listado[i].descripcion %>
 												</p> 
 												<p>
-													Agregado por: <%=listado[i].usuario.nombre %>
+													Agregado por: <a href="/users/profile/<%= listado[i].idUsuario %>"><%= listado[i].usuario.nombre %></a>
 												</p>
 											</article>
 										</a>
