@@ -28,8 +28,15 @@ const product = {
     let productoBuscado = req.query.search;
     let filtrado = {
       where: {
-        nombre: { [op.like]: "%" + productoBuscado + "%" }
+        [op.or]: 
+        [
+          { nombre: { [op.like]: "%" + productoBuscado + "%" } },
+          { descripcion: { [op.like]: "%" + productoBuscado + "%" } }
+        ]
       },
+      // where: {
+      //   nombre: { [op.like]: "%" + productoBuscado + "%" },
+      // },
       order: [
         ["createdAt", "DESC"]
       ],
