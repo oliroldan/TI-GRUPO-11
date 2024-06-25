@@ -17,8 +17,8 @@ const validations = [
 
 const validationsComment = [
   body("comentario")
-    .notEmpty().withMessage("debes ingresar un comentario").bail()
-    .isLength({ min: 3 }).withMessage("el comentario debe ser mas largo")
+    .notEmpty().withMessage("Debes ingresar un comentario.").bail()
+    .isLength({ min: 3 }).withMessage("El comentario debe ser mas largo.")
 ]
 
 router.get('/', productController.index);

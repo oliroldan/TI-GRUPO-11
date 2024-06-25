@@ -34,9 +34,6 @@ const product = {
           { descripcion: { [op.like]: "%" + productoBuscado + "%" } }
         ]
       },
-      // where: {
-      //   nombre: { [op.like]: "%" + productoBuscado + "%" },
-      // },
       order: [
         ["createdAt", "DESC"]
       ],
